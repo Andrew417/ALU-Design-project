@@ -1,0 +1,4 @@
+# Add to .gitignore
+*.cdslck
+*.cdslck.*
+master.tag
