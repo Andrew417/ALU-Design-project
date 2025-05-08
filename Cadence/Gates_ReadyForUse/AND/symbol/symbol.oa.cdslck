@@ -6,11 +6,11 @@
 LockStakeVersion               1.1
 LoginName                      cadence
 HostName                       berkeley.localdomain
-ProcessIdentifier              19899
-ProcessCreationTime_UTC        1745486194
-ProcessCreationTime_Readable   Thu Apr 24 05:16:34 2025 EDT
+ProcessIdentifier              1718
+ProcessCreationTime_UTC        1746714937
+ProcessCreationTime_Readable   Thu May  8 10:35:37 2025 EDT
 AppIdentifier                  OA File System Design Manager
 OSType                         unix
 ReasonForPlacingEditLock       OpenAccess edit lock
-FilePathUsedToEditLock         /home/cadence/my_project/mosLIB/and/symbol/symbol.oa.cdslck
-TimeEditLocked                 Thu Apr 24 05:30:07 2025 EDT
+FilePathUsedToEditLock         /home/cadence/my_project/Gates_ReadyForUse/AND/symbol/symbol.oa.cdslck.dirlck
+TimeEditLocked                 Thu May  8 11:45:21 2025 EDT
