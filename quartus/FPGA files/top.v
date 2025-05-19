@@ -1,0 +1,42 @@
+module top (
+    clk     ,
+    rst_n   ,
+    seg     ,
+	 sel     ,
+    an
+);
+
+input  clk;
+input  [3:0] sel;
+input  rst_n;
+
+output  [0:6] seg;
+output  [3:0] an;
+
+wire signed  [7:0] y;
+
+wire signed  [3:0] a;
+wire signed  [3:0] b;
+
+assign a = 4'b0111;	// 7
+assign b = 4'b1010;	// -6
+
+ALU a0 (
+    .clk(clk),
+    .a(a),
+    .b(b),
+    .sel(sel),
+    .rst_n(rst_n),
+    .y(y)
+);
+
+digital_tube_decoder disp0 (
+    .clk(clk),
+    .A(y),
+    .sel(sel[3]),
+    .seg(seg),
+    .an(an)
+);
+
+
+endmodule

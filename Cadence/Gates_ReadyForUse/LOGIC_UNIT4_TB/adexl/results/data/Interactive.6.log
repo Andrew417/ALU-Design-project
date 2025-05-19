@@ -1,0 +1,16 @@
+Starting Single Run, Sweeps and Corners...
+
+Current time: Fri May  9 15:52:02 2025 
+Best design point: 1
+Design specs: 
+	Gates_ReadyForUse:LOGIC_UNIT4_TB:1	corner	Nominal - 
+Design parameters: 
+	S0		0
+	S1		0
+	S2		1.2
+
+Interactive.6
+Number of points completed: 1
+Number of simulation errors: 0
+Interactive.6 completed. 
+Current time: Fri May  9 15:52:04 2025 

@@ -1,0 +1,380 @@
+Analysis & Synthesis report for top
+Tue May 20 01:53:14 2025
+Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. Registers Removed During Synthesis
+  9. General Register Statistics
+ 10. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 11. Parameter Settings for User Entity Instance: digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl
+ 12. Port Connectivity Checks: "digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl"
+ 13. Port Connectivity Checks: "digital_tube_decoder:disp0|binary_to_BCD:binary_to_BCD|add3:m6"
+ 14. Port Connectivity Checks: "digital_tube_decoder:disp0|binary_to_BCD:binary_to_BCD|add3:m1"
+ 15. Port Connectivity Checks: "ALU:a0"
+ 16. Elapsed Time Per Partition
+ 17. Analysis & Synthesis Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2013 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++--------------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                         ;
++------------------------------------+-------------------------------------------------+
+; Analysis & Synthesis Status        ; Successful - Tue May 20 01:53:13 2025           ;
+; Quartus II 64-Bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition ;
+; Revision Name                      ; top                                             ;
+; Top-level Entity Name              ; top                                             ;
+; Family                             ; Cyclone II                                      ;
+; Total logic elements               ; 119                                             ;
+;     Total combinational functions  ; 114                                             ;
+;     Dedicated logic registers      ; 29                                              ;
+; Total registers                    ; 29                                              ;
+; Total pins                         ; 17                                              ;
+; Total virtual pins                 ; 0                                               ;
+; Total memory bits                  ; 0                                               ;
+; Embedded Multiplier 9-bit elements ; 0                                               ;
+; Total PLLs                         ; 0                                               ;
++------------------------------------+-------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                        ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                                     ; Setting            ; Default Value      ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                                     ; EP2C8Q208C8        ;                    ;
+; Top-level entity name                                                      ; top                ; top                ;
+; Family name                                                                ; Cyclone II         ; Cyclone IV GX      ;
+; Use smart compilation                                                      ; Off                ; Off                ;
+; Enable parallel Assembler and TimeQuest Timing Analyzer during compilation ; On                 ; On                 ;
+; Enable compact report table                                                ; Off                ; Off                ;
+; Restructure Multiplexers                                                   ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                                        ; Off                ; Off                ;
+; Preserve fewer node names                                                  ; On                 ; On                 ;
+; Disable OpenCore Plus hardware evaluation                                  ; Off                ; Off                ;
+; Verilog Version                                                            ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                               ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                                   ; Auto               ; Auto               ;
+; Safe State Machine                                                         ; Off                ; Off                ;
+; Extract Verilog State Machines                                             ; On                 ; On                 ;
+; Extract VHDL State Machines                                                ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                          ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                                 ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                             ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                                    ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                                  ; On                 ; On                 ;
+; Parallel Synthesis                                                         ; On                 ; On                 ;
+; DSP Block Balancing                                                        ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                                         ; On                 ; On                 ;
+; Power-Up Don't Care                                                        ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                               ; Off                ; Off                ;
+; Remove Duplicate Registers                                                 ; On                 ; On                 ;
+; Ignore CARRY Buffers                                                       ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                                     ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                                      ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                                  ; Off                ; Off                ;
+; Ignore LCELL Buffers                                                       ; Off                ; Off                ;
+; Ignore SOFT Buffers                                                        ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                             ; Off                ; Off                ;
+; Optimization Technique                                                     ; Balanced           ; Balanced           ;
+; Carry Chain Length                                                         ; 70                 ; 70                 ;
+; Auto Carry Chains                                                          ; On                 ; On                 ;
+; Auto Open-Drain Pins                                                       ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                                      ; Off                ; Off                ;
+; Auto ROM Replacement                                                       ; On                 ; On                 ;
+; Auto RAM Replacement                                                       ; On                 ; On                 ;
+; Auto Shift Register Replacement                                            ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                            ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                              ; On                 ; On                 ;
+; Strict RAM Replacement                                                     ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                          ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                                     ; Off                ; Off                ;
+; Auto RAM to Logic Cell Conversion                                          ; Off                ; Off                ;
+; Auto Resource Sharing                                                      ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                                         ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                                         ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                              ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing                        ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                          ; Off                ; Off                ;
+; Timing-Driven Synthesis                                                    ; Off                ; Off                ;
+; Report Parameter Settings                                                  ; On                 ; On                 ;
+; Report Source Assignments                                                  ; On                 ; On                 ;
+; Report Connectivity Checks                                                 ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                                         ; Off                ; Off                ;
+; Synchronization Register Chain Length                                      ; 2                  ; 2                  ;
+; PowerPlay Power Optimization                                               ; Normal compilation ; Normal compilation ;
+; HDL message level                                                          ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                            ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report                   ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report                         ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report                  ; 100                ; 100                ;
+; Clock MUX Protection                                                       ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                                ; Off                ; Off                ;
+; Block Design Naming                                                        ; Auto               ; Auto               ;
+; SDC constraint protection                                                  ; Off                ; Off                ;
+; Synthesis Effort                                                           ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal               ; On                 ; On                 ;
+; Pre-Mapping Resynthesis Optimization                                       ; Off                ; Off                ;
+; Analysis & Synthesis Message Level                                         ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                                ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                                     ; On                 ; On                 ;
+; Synthesis Seed                                                             ; 1                  ; 1                  ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+
+
+Parallel compilation was disabled, but you have multiple processors available. Enable parallel compilation to reduce compilation time.
++-------------------------------------+
+; Parallel Compilation                ;
++----------------------------+--------+
+; Processors                 ; Number ;
++----------------------------+--------+
+; Number detected on machine ; 8      ;
+; Maximum allowed            ; 1      ;
++----------------------------+--------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                                                                                                 ;
++----------------------------------------------------------------------------------------------------+-----------------+------------------------+----------------------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path                                                                   ; Used in Netlist ; File Type              ; File Name with Absolute Path                                                                 ; Library ;
++----------------------------------------------------------------------------------------------------+-----------------+------------------------+----------------------------------------------------------------------------------------------+---------+
+; ../../../../../../../Downloads/Digital-Tube-Decoder-main/Digital-Tube-Decoder-main/main.v          ; yes             ; User Verilog HDL File  ; C:/Users/andre/Downloads/Digital-Tube-Decoder-main/Digital-Tube-Decoder-main/main.v          ;         ;
+; ../../../../../../../Downloads/Digital-Tube-Decoder-main/Digital-Tube-Decoder-main/Top_module.v    ; yes             ; User Verilog HDL File  ; C:/Users/andre/Downloads/Digital-Tube-Decoder-main/Digital-Tube-Decoder-main/Top_module.v    ;         ;
+; ../../../../../../../Downloads/Digital-Tube-Decoder-main/Digital-Tube-Decoder-main/top.v           ; yes             ; User Verilog HDL File  ; C:/Users/andre/Downloads/Digital-Tube-Decoder-main/Digital-Tube-Decoder-main/top.v           ;         ;
+; ../../../../../../../Downloads/Digital-Tube-Decoder-main/Digital-Tube-Decoder-main/display_ctrl.v  ; yes             ; User Verilog HDL File  ; C:/Users/andre/Downloads/Digital-Tube-Decoder-main/Digital-Tube-Decoder-main/display_ctrl.v  ;         ;
+; ../../../../../../../Downloads/Digital-Tube-Decoder-main/Digital-Tube-Decoder-main/binary_to_BCD.v ; yes             ; User Verilog HDL File  ; C:/Users/andre/Downloads/Digital-Tube-Decoder-main/Digital-Tube-Decoder-main/binary_to_BCD.v ;         ;
+; ../../../../../../../Downloads/Digital-Tube-Decoder-main/Digital-Tube-Decoder-main/add3.v          ; yes             ; User Verilog HDL File  ; C:/Users/andre/Downloads/Digital-Tube-Decoder-main/Digital-Tube-Decoder-main/add3.v          ;         ;
+; ../../../../../../../Downloads/Digital-Tube-Decoder-main/Digital-Tube-Decoder-main/abs.v           ; yes             ; User Verilog HDL File  ; C:/Users/andre/Downloads/Digital-Tube-Decoder-main/Digital-Tube-Decoder-main/abs.v           ;         ;
++----------------------------------------------------------------------------------------------------+-----------------+------------------------+----------------------------------------------------------------------------------------------+---------+
+
+
++-----------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary         ;
++---------------------------------------------+-------+
+; Resource                                    ; Usage ;
++---------------------------------------------+-------+
+; Estimated Total logic elements              ; 119   ;
+;                                             ;       ;
+; Total combinational functions               ; 114   ;
+; Logic element usage by number of LUT inputs ;       ;
+;     -- 4 input functions                    ; 57    ;
+;     -- 3 input functions                    ; 22    ;
+;     -- <=2 input functions                  ; 35    ;
+;                                             ;       ;
+; Logic elements by mode                      ;       ;
+;     -- normal mode                          ; 91    ;
+;     -- arithmetic mode                      ; 23    ;
+;                                             ;       ;
+; Total registers                             ; 29    ;
+;     -- Dedicated logic registers            ; 29    ;
+;     -- I/O registers                        ; 0     ;
+;                                             ;       ;
+; I/O pins                                    ; 17    ;
+; Embedded Multiplier 9-bit elements          ; 0     ;
+; Maximum fan-out node                        ; clk   ;
+; Maximum fan-out                             ; 29    ;
+; Total fan-out                               ; 440   ;
+; Average fan-out                             ; 2.75  ;
++---------------------------------------------+-------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                  ;
++-------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------------------------+--------------+
+; Compilation Hierarchy Node          ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                 ; Library Name ;
++-------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------------------------+--------------+
+; |top                                ; 114 (0)           ; 29 (0)       ; 0           ; 0            ; 0       ; 0         ; 17   ; 0            ; |top                                                                ; work         ;
+;    |ALU:a0|                         ; 18 (18)           ; 11 (11)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|ALU:a0                                                         ; work         ;
+;    |digital_tube_decoder:disp0|     ; 96 (0)            ; 18 (0)       ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|digital_tube_decoder:disp0                                     ; work         ;
+;       |abs:abs|                     ; 15 (15)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|digital_tube_decoder:disp0|abs:abs                             ; work         ;
+;       |binary_to_BCD:binary_to_BCD| ; 22 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|digital_tube_decoder:disp0|binary_to_BCD:binary_to_BCD         ; work         ;
+;          |add3:m1|                  ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|digital_tube_decoder:disp0|binary_to_BCD:binary_to_BCD|add3:m1 ; work         ;
+;          |add3:m2|                  ; 7 (7)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|digital_tube_decoder:disp0|binary_to_BCD:binary_to_BCD|add3:m2 ; work         ;
+;          |add3:m3|                  ; 4 (4)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|digital_tube_decoder:disp0|binary_to_BCD:binary_to_BCD|add3:m3 ; work         ;
+;          |add3:m4|                  ; 6 (6)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|digital_tube_decoder:disp0|binary_to_BCD:binary_to_BCD|add3:m4 ; work         ;
+;          |add3:m5|                  ; 3 (3)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|digital_tube_decoder:disp0|binary_to_BCD:binary_to_BCD|add3:m5 ; work         ;
+;          |add3:m7|                  ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|digital_tube_decoder:disp0|binary_to_BCD:binary_to_BCD|add3:m7 ; work         ;
+;       |display_ctrl:seven_seg_ctrl| ; 59 (59)           ; 18 (18)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl         ; work         ;
++-------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++--------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                             ;
++---------------------------------------+----------------------------------------+
+; Register name                         ; Reason for Removal                     ;
++---------------------------------------+----------------------------------------+
+; ALU:a0|a_ff[3]                        ; Stuck at GND due to stuck port data_in ;
+; ALU:a0|b_ff[0,2]                      ; Stuck at GND due to stuck port data_in ;
+; ALU:a0|b_ff[1]                        ; Merged with ALU:a0|b_ff[3]             ;
+; ALU:a0|b_ff[3]                        ; Merged with ALU:a0|a_ff[0]             ;
+; ALU:a0|a_ff[0]                        ; Merged with ALU:a0|a_ff[1]             ;
+; ALU:a0|a_ff[1]                        ; Merged with ALU:a0|a_ff[2]             ;
+; ALU:a0|y[4,6]                         ; Merged with ALU:a0|y[7]                ;
+; Total Number of Removed Registers = 9 ;                                        ;
++---------------------------------------+----------------------------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 29    ;
+; Number of registers using Synchronous Clear  ; 0     ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 7     ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 4     ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                                 ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                       ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------------------------+
+; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; Yes        ; |top|ALU:a0|y[3]                                                 ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |top|digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|Mux4 ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |top|ALU:a0|Mux2                                                 ;
+; 6:1                ; 2 bits    ; 8 LEs         ; 6 LEs                ; 2 LEs                  ; No         ; |top|digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|Mux1 ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl ;
++----------------+-------+----------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                       ;
++----------------+-------+----------------------------------------------------------------------------+
+; cdbits         ; 18    ; Signed Integer                                                             ;
+; hex            ; 0     ; Signed Integer                                                             ;
++----------------+-------+----------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl" ;
++----------+-------+----------+------------------------------------------------------+
+; Port     ; Type  ; Severity ; Details                                              ;
++----------+-------+----------+------------------------------------------------------+
+; x3[3..1] ; Input ; Info     ; Stuck at GND                                         ;
++----------+-------+----------+------------------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "digital_tube_decoder:disp0|binary_to_BCD:binary_to_BCD|add3:m6" ;
++-------+-------+----------+-----------------------------------------------------------------+
+; Port  ; Type  ; Severity ; Details                                                         ;
++-------+-------+----------+-----------------------------------------------------------------+
+; in[3] ; Input ; Info     ; Stuck at GND                                                    ;
++-------+-------+----------+-----------------------------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "digital_tube_decoder:disp0|binary_to_BCD:binary_to_BCD|add3:m1" ;
++-------+-------+----------+-----------------------------------------------------------------+
+; Port  ; Type  ; Severity ; Details                                                         ;
++-------+-------+----------+-----------------------------------------------------------------+
+; in[3] ; Input ; Info     ; Stuck at GND                                                    ;
++-------+-------+----------+-----------------------------------------------------------------+
+
+
++-------------------------------------------+
+; Port Connectivity Checks: "ALU:a0"        ;
++---------+-------+----------+--------------+
+; Port    ; Type  ; Severity ; Details      ;
++---------+-------+----------+--------------+
+; a[2..0] ; Input ; Info     ; Stuck at VCC ;
+; a[3]    ; Input ; Info     ; Stuck at GND ;
+; b[3]    ; Input ; Info     ; Stuck at VCC ;
+; b[2]    ; Input ; Info     ; Stuck at GND ;
+; b[1]    ; Input ; Info     ; Stuck at VCC ;
+; b[0]    ; Input ; Info     ; Stuck at GND ;
++---------+-------+----------+--------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:01     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II 64-Bit Analysis & Synthesis
+    Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+    Info: Processing started: Tue May 20 01:53:09 2025
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off top -c top
+Warning (20028): Parallel compilation is not licensed and has been disabled
+Info (12021): Found 1 design units, including 1 entities, in source file /users/andre/downloads/digital-tube-decoder-main/digital-tube-decoder-main/main.v
+    Info (12023): Found entity 1: ALU
+Info (12021): Found 1 design units, including 1 entities, in source file /users/andre/downloads/digital-tube-decoder-main/digital-tube-decoder-main/top_module.v
+    Info (12023): Found entity 1: digital_tube_decoder
+Info (12021): Found 1 design units, including 1 entities, in source file /users/andre/downloads/digital-tube-decoder-main/digital-tube-decoder-main/top.v
+    Info (12023): Found entity 1: top
+Info (12021): Found 1 design units, including 1 entities, in source file /users/andre/downloads/digital-tube-decoder-main/digital-tube-decoder-main/display_ctrl.v
+    Info (12023): Found entity 1: display_ctrl
+Info (12021): Found 1 design units, including 1 entities, in source file /users/andre/downloads/digital-tube-decoder-main/digital-tube-decoder-main/binary_to_bcd.v
+    Info (12023): Found entity 1: binary_to_BCD
+Info (12021): Found 1 design units, including 1 entities, in source file /users/andre/downloads/digital-tube-decoder-main/digital-tube-decoder-main/add3.v
+    Info (12023): Found entity 1: add3
+Info (12021): Found 1 design units, including 1 entities, in source file /users/andre/downloads/digital-tube-decoder-main/digital-tube-decoder-main/abs.v
+    Info (12023): Found entity 1: abs
+Info (12127): Elaborating entity "top" for the top level hierarchy
+Info (12128): Elaborating entity "ALU" for hierarchy "ALU:a0"
+Warning (10230): Verilog HDL assignment warning at main.v(33): truncated value with size 32 to match size of target (8)
+Warning (10230): Verilog HDL assignment warning at main.v(34): truncated value with size 32 to match size of target (8)
+Warning (10230): Verilog HDL assignment warning at main.v(37): truncated value with size 32 to match size of target (8)
+Info (12128): Elaborating entity "digital_tube_decoder" for hierarchy "digital_tube_decoder:disp0"
+Info (12128): Elaborating entity "abs" for hierarchy "digital_tube_decoder:disp0|abs:abs"
+Info (12128): Elaborating entity "binary_to_BCD" for hierarchy "digital_tube_decoder:disp0|binary_to_BCD:binary_to_BCD"
+Info (12128): Elaborating entity "add3" for hierarchy "digital_tube_decoder:disp0|binary_to_BCD:binary_to_BCD|add3:m1"
+Info (12128): Elaborating entity "display_ctrl" for hierarchy "digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl"
+Warning (10230): Verilog HDL assignment warning at display_ctrl.v(31): truncated value with size 32 to match size of target (18)
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Info (21057): Implemented 136 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 6 input pins
+    Info (21059): Implemented 11 output pins
+    Info (21061): Implemented 119 logic cells
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 5 warnings
+    Info: Peak virtual memory: 4598 megabytes
+    Info: Processing ended: Tue May 20 01:53:14 2025
+    Info: Elapsed time: 00:00:05
+    Info: Total CPU time (on all processors): 00:00:03
+
+

@@ -1,0 +1,1263 @@
+TimeQuest Timing Analyzer report for top
+Tue May 20 01:53:27 2025
+Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. TimeQuest Timing Analyzer Summary
+  3. Parallel Compilation
+  4. Clocks
+  5. Slow Model Fmax Summary
+  6. Slow Model Setup Summary
+  7. Slow Model Hold Summary
+  8. Slow Model Recovery Summary
+  9. Slow Model Removal Summary
+ 10. Slow Model Minimum Pulse Width Summary
+ 11. Slow Model Setup: 'clk'
+ 12. Slow Model Hold: 'clk'
+ 13. Slow Model Minimum Pulse Width: 'clk'
+ 14. Setup Times
+ 15. Hold Times
+ 16. Clock to Output Times
+ 17. Minimum Clock to Output Times
+ 18. Propagation Delay
+ 19. Minimum Propagation Delay
+ 20. Fast Model Setup Summary
+ 21. Fast Model Hold Summary
+ 22. Fast Model Recovery Summary
+ 23. Fast Model Removal Summary
+ 24. Fast Model Minimum Pulse Width Summary
+ 25. Fast Model Setup: 'clk'
+ 26. Fast Model Hold: 'clk'
+ 27. Fast Model Minimum Pulse Width: 'clk'
+ 28. Setup Times
+ 29. Hold Times
+ 30. Clock to Output Times
+ 31. Minimum Clock to Output Times
+ 32. Propagation Delay
+ 33. Minimum Propagation Delay
+ 34. Multicorner Timing Analysis Summary
+ 35. Setup Times
+ 36. Hold Times
+ 37. Clock to Output Times
+ 38. Minimum Clock to Output Times
+ 39. Progagation Delay
+ 40. Minimum Progagation Delay
+ 41. Setup Transfers
+ 42. Hold Transfers
+ 43. Report TCCS
+ 44. Report RSKM
+ 45. Unconstrained Paths
+ 46. TimeQuest Timing Analyzer Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2013 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++----------------------------------------------------------------------------------------+
+; TimeQuest Timing Analyzer Summary                                                      ;
++--------------------+-------------------------------------------------------------------+
+; Quartus II Version ; Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition ;
+; Revision Name      ; top                                                               ;
+; Device Family      ; Cyclone II                                                        ;
+; Device Name        ; EP2C8Q208C8                                                       ;
+; Timing Models      ; Final                                                             ;
+; Delay Model        ; Combined                                                          ;
+; Rise/Fall Delays   ; Unavailable                                                       ;
++--------------------+-------------------------------------------------------------------+
+
+
+Parallel compilation was disabled, but you have multiple processors available. Enable parallel compilation to reduce compilation time.
++-------------------------------------+
+; Parallel Compilation                ;
++----------------------------+--------+
+; Processors                 ; Number ;
++----------------------------+--------+
+; Number detected on machine ; 8      ;
+; Maximum allowed            ; 1      ;
++----------------------------+--------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clocks                                                                                                                                                                          ;
++------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+---------+
+; Clock Name ; Type ; Period ; Frequency  ; Rise  ; Fall  ; Duty Cycle ; Divide by ; Multiply by ; Phase ; Offset ; Edge List ; Edge Shift ; Inverted ; Master ; Source ; Targets ;
++------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+---------+
+; clk        ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { clk } ;
++------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+---------+
+
+
++--------------------------------------------------+
+; Slow Model Fmax Summary                          ;
++------------+-----------------+------------+------+
+; Fmax       ; Restricted Fmax ; Clock Name ; Note ;
++------------+-----------------+------------+------+
+; 289.94 MHz ; 289.94 MHz      ; clk        ;      ;
++------------+-----------------+------------+------+
+This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
+
+
++--------------------------------+
+; Slow Model Setup Summary       ;
++-------+--------+---------------+
+; Clock ; Slack  ; End Point TNS ;
++-------+--------+---------------+
+; clk   ; -2.449 ; -37.871       ;
++-------+--------+---------------+
+
+
++-------------------------------+
+; Slow Model Hold Summary       ;
++-------+-------+---------------+
+; Clock ; Slack ; End Point TNS ;
++-------+-------+---------------+
+; clk   ; 0.499 ; 0.000         ;
++-------+-------+---------------+
+
+
+-------------------------------
+; Slow Model Recovery Summary ;
+-------------------------------
+No paths to report.
+
+
+------------------------------
+; Slow Model Removal Summary ;
+------------------------------
+No paths to report.
+
+
++----------------------------------------+
+; Slow Model Minimum Pulse Width Summary ;
++-------+--------+-----------------------+
+; Clock ; Slack  ; End Point TNS         ;
++-------+--------+-----------------------+
+; clk   ; -1.941 ; -44.977               ;
++-------+--------+-----------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Slow Model Setup: 'clk'                                                                                                                                                                                                ;
++--------+--------------------------------------------------------------------+--------------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack  ; From Node                                                          ; To Node                                                            ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+--------------------------------------------------------------------+--------------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; -2.449 ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[1]  ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[17] ; clk          ; clk         ; 1.000        ; -0.003     ; 3.486      ;
+; -2.394 ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[0]  ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[17] ; clk          ; clk         ; 1.000        ; -0.003     ; 3.431      ;
+; -2.309 ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[2]  ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[17] ; clk          ; clk         ; 1.000        ; -0.003     ; 3.346      ;
+; -2.277 ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[3]  ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[17] ; clk          ; clk         ; 1.000        ; -0.003     ; 3.314      ;
+; -2.259 ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[1]  ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[16] ; clk          ; clk         ; 1.000        ; -0.003     ; 3.296      ;
+; -2.253 ; ALU:a0|sel_ff[3]                                                   ; ALU:a0|y[5]                                                        ; clk          ; clk         ; 1.000        ; 0.000      ; 3.293      ;
+; -2.204 ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[0]  ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[16] ; clk          ; clk         ; 1.000        ; -0.003     ; 3.241      ;
+; -2.173 ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[1]  ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[15] ; clk          ; clk         ; 1.000        ; -0.003     ; 3.210      ;
+; -2.148 ; ALU:a0|a_ff[2]                                                     ; ALU:a0|y[5]                                                        ; clk          ; clk         ; 1.000        ; 0.000      ; 3.188      ;
+; -2.137 ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[4]  ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[17] ; clk          ; clk         ; 1.000        ; -0.003     ; 3.174      ;
+; -2.119 ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[2]  ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[16] ; clk          ; clk         ; 1.000        ; -0.003     ; 3.156      ;
+; -2.118 ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[0]  ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[15] ; clk          ; clk         ; 1.000        ; -0.003     ; 3.155      ;
+; -2.106 ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[5]  ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[17] ; clk          ; clk         ; 1.000        ; -0.003     ; 3.143      ;
+; -2.087 ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[1]  ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[14] ; clk          ; clk         ; 1.000        ; -0.003     ; 3.124      ;
+; -2.087 ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[3]  ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[16] ; clk          ; clk         ; 1.000        ; -0.003     ; 3.124      ;
+; -2.033 ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[2]  ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[15] ; clk          ; clk         ; 1.000        ; -0.003     ; 3.070      ;
+; -2.032 ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[0]  ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[14] ; clk          ; clk         ; 1.000        ; -0.003     ; 3.069      ;
+; -2.001 ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[1]  ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[13] ; clk          ; clk         ; 1.000        ; -0.003     ; 3.038      ;
+; -2.001 ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[3]  ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[15] ; clk          ; clk         ; 1.000        ; -0.003     ; 3.038      ;
+; -1.970 ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[6]  ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[17] ; clk          ; clk         ; 1.000        ; -0.003     ; 3.007      ;
+; -1.947 ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[4]  ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[16] ; clk          ; clk         ; 1.000        ; -0.003     ; 2.984      ;
+; -1.947 ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[2]  ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[14] ; clk          ; clk         ; 1.000        ; -0.003     ; 2.984      ;
+; -1.946 ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[0]  ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[13] ; clk          ; clk         ; 1.000        ; -0.003     ; 2.983      ;
+; -1.945 ; ALU:a0|sel_ff[2]                                                   ; ALU:a0|y[1]                                                        ; clk          ; clk         ; 1.000        ; 0.000      ; 2.985      ;
+; -1.916 ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[5]  ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[16] ; clk          ; clk         ; 1.000        ; -0.003     ; 2.953      ;
+; -1.915 ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[1]  ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[12] ; clk          ; clk         ; 1.000        ; -0.003     ; 2.952      ;
+; -1.915 ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[3]  ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[14] ; clk          ; clk         ; 1.000        ; -0.003     ; 2.952      ;
+; -1.903 ; ALU:a0|sel_ff[3]                                                   ; ALU:a0|y[1]                                                        ; clk          ; clk         ; 1.000        ; 0.000      ; 2.943      ;
+; -1.884 ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[7]  ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[17] ; clk          ; clk         ; 1.000        ; -0.003     ; 2.921      ;
+; -1.861 ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[4]  ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[15] ; clk          ; clk         ; 1.000        ; -0.003     ; 2.898      ;
+; -1.861 ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[2]  ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[13] ; clk          ; clk         ; 1.000        ; -0.003     ; 2.898      ;
+; -1.860 ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[0]  ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[12] ; clk          ; clk         ; 1.000        ; -0.003     ; 2.897      ;
+; -1.830 ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[5]  ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[15] ; clk          ; clk         ; 1.000        ; -0.003     ; 2.867      ;
+; -1.829 ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[1]  ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[11] ; clk          ; clk         ; 1.000        ; -0.003     ; 2.866      ;
+; -1.829 ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[3]  ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[13] ; clk          ; clk         ; 1.000        ; -0.003     ; 2.866      ;
+; -1.818 ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[8]  ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[17] ; clk          ; clk         ; 1.000        ; -0.003     ; 2.855      ;
+; -1.780 ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[6]  ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[16] ; clk          ; clk         ; 1.000        ; -0.003     ; 2.817      ;
+; -1.775 ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[4]  ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[14] ; clk          ; clk         ; 1.000        ; -0.003     ; 2.812      ;
+; -1.775 ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[2]  ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[12] ; clk          ; clk         ; 1.000        ; -0.003     ; 2.812      ;
+; -1.774 ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[0]  ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[11] ; clk          ; clk         ; 1.000        ; -0.003     ; 2.811      ;
+; -1.756 ; ALU:a0|sel_ff[1]                                                   ; ALU:a0|y[5]                                                        ; clk          ; clk         ; 1.000        ; 0.000      ; 2.796      ;
+; -1.744 ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[5]  ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[14] ; clk          ; clk         ; 1.000        ; -0.003     ; 2.781      ;
+; -1.743 ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[1]  ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[10] ; clk          ; clk         ; 1.000        ; -0.003     ; 2.780      ;
+; -1.743 ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[3]  ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[12] ; clk          ; clk         ; 1.000        ; -0.003     ; 2.780      ;
+; -1.694 ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[7]  ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[16] ; clk          ; clk         ; 1.000        ; -0.003     ; 2.731      ;
+; -1.694 ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[6]  ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[15] ; clk          ; clk         ; 1.000        ; -0.003     ; 2.731      ;
+; -1.689 ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[4]  ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[13] ; clk          ; clk         ; 1.000        ; -0.003     ; 2.726      ;
+; -1.689 ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[2]  ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[11] ; clk          ; clk         ; 1.000        ; -0.003     ; 2.726      ;
+; -1.688 ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[0]  ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[10] ; clk          ; clk         ; 1.000        ; -0.003     ; 2.725      ;
+; -1.658 ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[5]  ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[13] ; clk          ; clk         ; 1.000        ; -0.003     ; 2.695      ;
+; -1.657 ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[1]  ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[9]  ; clk          ; clk         ; 1.000        ; -0.003     ; 2.694      ;
+; -1.657 ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[3]  ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[11] ; clk          ; clk         ; 1.000        ; -0.003     ; 2.694      ;
+; -1.646 ; ALU:a0|sel_ff[2]                                                   ; ALU:a0|y[0]                                                        ; clk          ; clk         ; 1.000        ; 0.000      ; 2.686      ;
+; -1.641 ; ALU:a0|sel_ff[2]                                                   ; ALU:a0|y[3]                                                        ; clk          ; clk         ; 1.000        ; 0.000      ; 2.681      ;
+; -1.628 ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[8]  ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[16] ; clk          ; clk         ; 1.000        ; -0.003     ; 2.665      ;
+; -1.627 ; ALU:a0|sel_ff[2]                                                   ; ALU:a0|y[5]                                                        ; clk          ; clk         ; 1.000        ; 0.000      ; 2.667      ;
+; -1.625 ; ALU:a0|sel_ff[2]                                                   ; ALU:a0|y[7]                                                        ; clk          ; clk         ; 1.000        ; 0.000      ; 2.665      ;
+; -1.615 ; ALU:a0|sel_ff[0]                                                   ; ALU:a0|y[2]                                                        ; clk          ; clk         ; 1.000        ; 0.001      ; 2.656      ;
+; -1.611 ; ALU:a0|sel_ff[3]                                                   ; ALU:a0|y[0]                                                        ; clk          ; clk         ; 1.000        ; 0.000      ; 2.651      ;
+; -1.609 ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[9]  ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[17] ; clk          ; clk         ; 1.000        ; 0.000      ; 2.649      ;
+; -1.608 ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[7]  ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[15] ; clk          ; clk         ; 1.000        ; -0.003     ; 2.645      ;
+; -1.608 ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[6]  ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[14] ; clk          ; clk         ; 1.000        ; -0.003     ; 2.645      ;
+; -1.607 ; ALU:a0|sel_ff[3]                                                   ; ALU:a0|y[3]                                                        ; clk          ; clk         ; 1.000        ; 0.000      ; 2.647      ;
+; -1.603 ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[4]  ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[12] ; clk          ; clk         ; 1.000        ; -0.003     ; 2.640      ;
+; -1.603 ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[2]  ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[10] ; clk          ; clk         ; 1.000        ; -0.003     ; 2.640      ;
+; -1.602 ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[0]  ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[9]  ; clk          ; clk         ; 1.000        ; -0.003     ; 2.639      ;
+; -1.599 ; ALU:a0|a_ff[2]                                                     ; ALU:a0|y[2]                                                        ; clk          ; clk         ; 1.000        ; 0.001      ; 2.640      ;
+; -1.572 ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[5]  ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[12] ; clk          ; clk         ; 1.000        ; -0.003     ; 2.609      ;
+; -1.571 ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[3]  ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[10] ; clk          ; clk         ; 1.000        ; -0.003     ; 2.608      ;
+; -1.542 ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[8]  ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[15] ; clk          ; clk         ; 1.000        ; -0.003     ; 2.579      ;
+; -1.533 ; ALU:a0|sel_ff[0]                                                   ; ALU:a0|y[1]                                                        ; clk          ; clk         ; 1.000        ; 0.000      ; 2.573      ;
+; -1.523 ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[10] ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[17] ; clk          ; clk         ; 1.000        ; 0.000      ; 2.563      ;
+; -1.522 ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[7]  ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[14] ; clk          ; clk         ; 1.000        ; -0.003     ; 2.559      ;
+; -1.522 ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[6]  ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[13] ; clk          ; clk         ; 1.000        ; -0.003     ; 2.559      ;
+; -1.518 ; ALU:a0|sel_ff[2]                                                   ; ALU:a0|y[2]                                                        ; clk          ; clk         ; 1.000        ; 0.001      ; 2.559      ;
+; -1.517 ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[4]  ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[11] ; clk          ; clk         ; 1.000        ; -0.003     ; 2.554      ;
+; -1.517 ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[2]  ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[9]  ; clk          ; clk         ; 1.000        ; -0.003     ; 2.554      ;
+; -1.486 ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[5]  ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[11] ; clk          ; clk         ; 1.000        ; -0.003     ; 2.523      ;
+; -1.485 ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[3]  ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[9]  ; clk          ; clk         ; 1.000        ; -0.003     ; 2.522      ;
+; -1.479 ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[1]  ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[8]  ; clk          ; clk         ; 1.000        ; 0.000      ; 2.519      ;
+; -1.475 ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[11] ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[17] ; clk          ; clk         ; 1.000        ; 0.000      ; 2.515      ;
+; -1.456 ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[8]  ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[14] ; clk          ; clk         ; 1.000        ; -0.003     ; 2.493      ;
+; -1.450 ; ALU:a0|sel_ff[3]                                                   ; ALU:a0|y[7]                                                        ; clk          ; clk         ; 1.000        ; 0.000      ; 2.490      ;
+; -1.436 ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[7]  ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[13] ; clk          ; clk         ; 1.000        ; -0.003     ; 2.473      ;
+; -1.436 ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[6]  ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[12] ; clk          ; clk         ; 1.000        ; -0.003     ; 2.473      ;
+; -1.431 ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[4]  ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[10] ; clk          ; clk         ; 1.000        ; -0.003     ; 2.468      ;
+; -1.424 ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[0]  ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[8]  ; clk          ; clk         ; 1.000        ; 0.000      ; 2.464      ;
+; -1.419 ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[9]  ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[16] ; clk          ; clk         ; 1.000        ; 0.000      ; 2.459      ;
+; -1.411 ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[12] ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[17] ; clk          ; clk         ; 1.000        ; 0.000      ; 2.451      ;
+; -1.411 ; ALU:a0|sel_ff[1]                                                   ; ALU:a0|y[1]                                                        ; clk          ; clk         ; 1.000        ; 0.000      ; 2.451      ;
+; -1.400 ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[5]  ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[10] ; clk          ; clk         ; 1.000        ; -0.003     ; 2.437      ;
+; -1.393 ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[1]  ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[7]  ; clk          ; clk         ; 1.000        ; 0.000      ; 2.433      ;
+; -1.391 ; ALU:a0|sel_ff[0]                                                   ; ALU:a0|y[5]                                                        ; clk          ; clk         ; 1.000        ; 0.000      ; 2.431      ;
+; -1.389 ; ALU:a0|sel_ff[0]                                                   ; ALU:a0|y[7]                                                        ; clk          ; clk         ; 1.000        ; 0.000      ; 2.429      ;
+; -1.370 ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[8]  ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[13] ; clk          ; clk         ; 1.000        ; -0.003     ; 2.407      ;
+; -1.350 ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[7]  ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[12] ; clk          ; clk         ; 1.000        ; -0.003     ; 2.387      ;
+; -1.350 ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[6]  ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[11] ; clk          ; clk         ; 1.000        ; -0.003     ; 2.387      ;
+; -1.345 ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[4]  ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[9]  ; clk          ; clk         ; 1.000        ; -0.003     ; 2.382      ;
+; -1.339 ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[2]  ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[8]  ; clk          ; clk         ; 1.000        ; 0.000      ; 2.379      ;
+; -1.338 ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[0]  ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[7]  ; clk          ; clk         ; 1.000        ; 0.000      ; 2.378      ;
++--------+--------------------------------------------------------------------+--------------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Slow Model Hold: 'clk'                                                                                                                                                                                                ;
++-------+--------------------------------------------------------------------+--------------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack ; From Node                                                          ; To Node                                                            ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+--------------------------------------------------------------------+--------------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; 0.499 ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[0]  ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[0]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.805      ;
+; 1.066 ; ALU:a0|sel_ff[2]                                                   ; ALU:a0|y[1]                                                        ; clk          ; clk         ; 0.000        ; 0.000      ; 1.372      ;
+; 1.080 ; ALU:a0|sel_ff[1]                                                   ; ALU:a0|y[7]                                                        ; clk          ; clk         ; 0.000        ; 0.000      ; 1.386      ;
+; 1.082 ; ALU:a0|sel_ff[1]                                                   ; ALU:a0|y[5]                                                        ; clk          ; clk         ; 0.000        ; 0.000      ; 1.388      ;
+; 1.158 ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[9]  ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[9]  ; clk          ; clk         ; 0.000        ; 0.000      ; 1.464      ;
+; 1.158 ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[10] ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[10] ; clk          ; clk         ; 0.000        ; 0.000      ; 1.464      ;
+; 1.164 ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[0]  ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[1]  ; clk          ; clk         ; 0.000        ; 0.000      ; 1.470      ;
+; 1.164 ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[2]  ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[2]  ; clk          ; clk         ; 0.000        ; 0.000      ; 1.470      ;
+; 1.164 ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[4]  ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[4]  ; clk          ; clk         ; 0.000        ; 0.000      ; 1.470      ;
+; 1.169 ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[6]  ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[6]  ; clk          ; clk         ; 0.000        ; 0.000      ; 1.475      ;
+; 1.169 ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[7]  ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[7]  ; clk          ; clk         ; 0.000        ; 0.000      ; 1.475      ;
+; 1.169 ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[8]  ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[8]  ; clk          ; clk         ; 0.000        ; 0.000      ; 1.475      ;
+; 1.196 ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[11] ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[11] ; clk          ; clk         ; 0.000        ; 0.000      ; 1.502      ;
+; 1.197 ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[13] ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[13] ; clk          ; clk         ; 0.000        ; 0.000      ; 1.503      ;
+; 1.217 ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[3]  ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[3]  ; clk          ; clk         ; 0.000        ; 0.000      ; 1.523      ;
+; 1.217 ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[12] ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[12] ; clk          ; clk         ; 0.000        ; 0.000      ; 1.523      ;
+; 1.218 ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[5]  ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[5]  ; clk          ; clk         ; 0.000        ; 0.000      ; 1.524      ;
+; 1.218 ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[14] ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[14] ; clk          ; clk         ; 0.000        ; 0.000      ; 1.524      ;
+; 1.218 ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[15] ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[15] ; clk          ; clk         ; 0.000        ; 0.000      ; 1.524      ;
+; 1.220 ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[1]  ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[1]  ; clk          ; clk         ; 0.000        ; 0.000      ; 1.526      ;
+; 1.223 ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[16] ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[16] ; clk          ; clk         ; 0.000        ; 0.000      ; 1.529      ;
+; 1.267 ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[17] ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[17] ; clk          ; clk         ; 0.000        ; 0.000      ; 1.573      ;
+; 1.270 ; ALU:a0|sel_ff[3]                                                   ; ALU:a0|y[7]                                                        ; clk          ; clk         ; 0.000        ; 0.000      ; 1.576      ;
+; 1.368 ; ALU:a0|a_ff[2]                                                     ; ALU:a0|y[3]                                                        ; clk          ; clk         ; 0.000        ; 0.000      ; 1.674      ;
+; 1.370 ; ALU:a0|a_ff[2]                                                     ; ALU:a0|y[0]                                                        ; clk          ; clk         ; 0.000        ; 0.000      ; 1.676      ;
+; 1.464 ; ALU:a0|a_ff[2]                                                     ; ALU:a0|y[1]                                                        ; clk          ; clk         ; 0.000        ; 0.000      ; 1.770      ;
+; 1.492 ; ALU:a0|sel_ff[1]                                                   ; ALU:a0|y[3]                                                        ; clk          ; clk         ; 0.000        ; 0.000      ; 1.798      ;
+; 1.496 ; ALU:a0|sel_ff[2]                                                   ; ALU:a0|y[2]                                                        ; clk          ; clk         ; 0.000        ; 0.001      ; 1.803      ;
+; 1.497 ; ALU:a0|sel_ff[1]                                                   ; ALU:a0|y[0]                                                        ; clk          ; clk         ; 0.000        ; 0.000      ; 1.803      ;
+; 1.629 ; ALU:a0|sel_ff[3]                                                   ; ALU:a0|y[2]                                                        ; clk          ; clk         ; 0.000        ; 0.001      ; 1.936      ;
+; 1.637 ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[9]  ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[10] ; clk          ; clk         ; 0.000        ; 0.000      ; 1.943      ;
+; 1.637 ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[10] ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[11] ; clk          ; clk         ; 0.000        ; 0.000      ; 1.943      ;
+; 1.642 ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[0]  ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[2]  ; clk          ; clk         ; 0.000        ; 0.000      ; 1.948      ;
+; 1.643 ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[2]  ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[3]  ; clk          ; clk         ; 0.000        ; 0.000      ; 1.949      ;
+; 1.643 ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[4]  ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[5]  ; clk          ; clk         ; 0.000        ; 0.000      ; 1.949      ;
+; 1.648 ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[6]  ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[7]  ; clk          ; clk         ; 0.000        ; 0.000      ; 1.954      ;
+; 1.648 ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[7]  ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[8]  ; clk          ; clk         ; 0.000        ; 0.000      ; 1.954      ;
+; 1.669 ; ALU:a0|sel_ff[1]                                                   ; ALU:a0|y[1]                                                        ; clk          ; clk         ; 0.000        ; 0.000      ; 1.975      ;
+; 1.675 ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[11] ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[12] ; clk          ; clk         ; 0.000        ; 0.000      ; 1.981      ;
+; 1.676 ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[13] ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[14] ; clk          ; clk         ; 0.000        ; 0.000      ; 1.982      ;
+; 1.697 ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[3]  ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[4]  ; clk          ; clk         ; 0.000        ; 0.000      ; 2.003      ;
+; 1.697 ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[12] ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[13] ; clk          ; clk         ; 0.000        ; 0.000      ; 2.003      ;
+; 1.697 ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[1]  ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[2]  ; clk          ; clk         ; 0.000        ; 0.000      ; 2.003      ;
+; 1.698 ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[5]  ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[6]  ; clk          ; clk         ; 0.000        ; 0.000      ; 2.004      ;
+; 1.698 ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[14] ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[15] ; clk          ; clk         ; 0.000        ; 0.000      ; 2.004      ;
+; 1.698 ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[15] ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[16] ; clk          ; clk         ; 0.000        ; 0.000      ; 2.004      ;
+; 1.723 ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[9]  ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[11] ; clk          ; clk         ; 0.000        ; 0.000      ; 2.029      ;
+; 1.723 ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[10] ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[12] ; clk          ; clk         ; 0.000        ; 0.000      ; 2.029      ;
+; 1.728 ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[0]  ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[3]  ; clk          ; clk         ; 0.000        ; 0.000      ; 2.034      ;
+; 1.729 ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[2]  ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[4]  ; clk          ; clk         ; 0.000        ; 0.000      ; 2.035      ;
+; 1.729 ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[4]  ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[6]  ; clk          ; clk         ; 0.000        ; 0.000      ; 2.035      ;
+; 1.734 ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[6]  ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[8]  ; clk          ; clk         ; 0.000        ; 0.000      ; 2.040      ;
+; 1.760 ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[8]  ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[9]  ; clk          ; clk         ; 0.000        ; -0.003     ; 2.063      ;
+; 1.761 ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[11] ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[13] ; clk          ; clk         ; 0.000        ; 0.000      ; 2.067      ;
+; 1.762 ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[13] ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[15] ; clk          ; clk         ; 0.000        ; 0.000      ; 2.068      ;
+; 1.783 ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[3]  ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[5]  ; clk          ; clk         ; 0.000        ; 0.000      ; 2.089      ;
+; 1.783 ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[12] ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[14] ; clk          ; clk         ; 0.000        ; 0.000      ; 2.089      ;
+; 1.783 ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[1]  ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[3]  ; clk          ; clk         ; 0.000        ; 0.000      ; 2.089      ;
+; 1.784 ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[5]  ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[7]  ; clk          ; clk         ; 0.000        ; 0.000      ; 2.090      ;
+; 1.784 ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[14] ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[16] ; clk          ; clk         ; 0.000        ; 0.000      ; 2.090      ;
+; 1.798 ; ALU:a0|sel_ff[0]                                                   ; ALU:a0|y[1]                                                        ; clk          ; clk         ; 0.000        ; 0.000      ; 2.104      ;
+; 1.809 ; ALU:a0|sel_ff[0]                                                   ; ALU:a0|y[3]                                                        ; clk          ; clk         ; 0.000        ; 0.000      ; 2.115      ;
+; 1.809 ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[9]  ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[12] ; clk          ; clk         ; 0.000        ; 0.000      ; 2.115      ;
+; 1.809 ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[10] ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[13] ; clk          ; clk         ; 0.000        ; 0.000      ; 2.115      ;
+; 1.811 ; ALU:a0|sel_ff[0]                                                   ; ALU:a0|y[0]                                                        ; clk          ; clk         ; 0.000        ; 0.000      ; 2.117      ;
+; 1.812 ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[16] ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[17] ; clk          ; clk         ; 0.000        ; 0.000      ; 2.118      ;
+; 1.814 ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[0]  ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[4]  ; clk          ; clk         ; 0.000        ; 0.000      ; 2.120      ;
+; 1.815 ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[2]  ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[5]  ; clk          ; clk         ; 0.000        ; 0.000      ; 2.121      ;
+; 1.815 ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[4]  ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[7]  ; clk          ; clk         ; 0.000        ; 0.000      ; 2.121      ;
+; 1.826 ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[7]  ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[9]  ; clk          ; clk         ; 0.000        ; -0.003     ; 2.129      ;
+; 1.846 ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[8]  ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[10] ; clk          ; clk         ; 0.000        ; -0.003     ; 2.149      ;
+; 1.847 ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[11] ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[14] ; clk          ; clk         ; 0.000        ; 0.000      ; 2.153      ;
+; 1.848 ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[13] ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[16] ; clk          ; clk         ; 0.000        ; 0.000      ; 2.154      ;
+; 1.863 ; ALU:a0|sel_ff[2]                                                   ; ALU:a0|y[7]                                                        ; clk          ; clk         ; 0.000        ; 0.000      ; 2.169      ;
+; 1.864 ; ALU:a0|sel_ff[2]                                                   ; ALU:a0|y[5]                                                        ; clk          ; clk         ; 0.000        ; 0.000      ; 2.170      ;
+; 1.865 ; ALU:a0|sel_ff[1]                                                   ; ALU:a0|y[2]                                                        ; clk          ; clk         ; 0.000        ; 0.001      ; 2.172      ;
+; 1.869 ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[3]  ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[6]  ; clk          ; clk         ; 0.000        ; 0.000      ; 2.175      ;
+; 1.869 ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[12] ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[15] ; clk          ; clk         ; 0.000        ; 0.000      ; 2.175      ;
+; 1.869 ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[1]  ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[4]  ; clk          ; clk         ; 0.000        ; 0.000      ; 2.175      ;
+; 1.870 ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[5]  ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[8]  ; clk          ; clk         ; 0.000        ; 0.000      ; 2.176      ;
+; 1.883 ; ALU:a0|sel_ff[0]                                                   ; ALU:a0|y[5]                                                        ; clk          ; clk         ; 0.000        ; 0.000      ; 2.189      ;
+; 1.888 ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[15] ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[17] ; clk          ; clk         ; 0.000        ; 0.000      ; 2.194      ;
+; 1.895 ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[9]  ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[13] ; clk          ; clk         ; 0.000        ; 0.000      ; 2.201      ;
+; 1.895 ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[10] ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[14] ; clk          ; clk         ; 0.000        ; 0.000      ; 2.201      ;
+; 1.900 ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[0]  ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[5]  ; clk          ; clk         ; 0.000        ; 0.000      ; 2.206      ;
+; 1.901 ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[2]  ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[6]  ; clk          ; clk         ; 0.000        ; 0.000      ; 2.207      ;
+; 1.901 ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[4]  ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[8]  ; clk          ; clk         ; 0.000        ; 0.000      ; 2.207      ;
+; 1.912 ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[6]  ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[9]  ; clk          ; clk         ; 0.000        ; -0.003     ; 2.215      ;
+; 1.912 ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[7]  ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[10] ; clk          ; clk         ; 0.000        ; -0.003     ; 2.215      ;
+; 1.932 ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[8]  ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[11] ; clk          ; clk         ; 0.000        ; -0.003     ; 2.235      ;
+; 1.933 ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[11] ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[15] ; clk          ; clk         ; 0.000        ; 0.000      ; 2.239      ;
+; 1.936 ; ALU:a0|a_ff[2]                                                     ; ALU:a0|y[7]                                                        ; clk          ; clk         ; 0.000        ; 0.000      ; 2.242      ;
+; 1.938 ; ALU:a0|a_ff[2]                                                     ; ALU:a0|y[5]                                                        ; clk          ; clk         ; 0.000        ; 0.000      ; 2.244      ;
+; 1.955 ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[3]  ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[7]  ; clk          ; clk         ; 0.000        ; 0.000      ; 2.261      ;
+; 1.955 ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[12] ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[16] ; clk          ; clk         ; 0.000        ; 0.000      ; 2.261      ;
+; 1.955 ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[1]  ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[5]  ; clk          ; clk         ; 0.000        ; 0.000      ; 2.261      ;
+; 1.974 ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[14] ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[17] ; clk          ; clk         ; 0.000        ; 0.000      ; 2.280      ;
+; 1.981 ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[9]  ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[14] ; clk          ; clk         ; 0.000        ; 0.000      ; 2.287      ;
+; 1.981 ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[10] ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[15] ; clk          ; clk         ; 0.000        ; 0.000      ; 2.287      ;
+; 1.986 ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[0]  ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[6]  ; clk          ; clk         ; 0.000        ; 0.000      ; 2.292      ;
++-------+--------------------------------------------------------------------+--------------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------+
+; Slow Model Minimum Pulse Width: 'clk'                                                                                                               ;
++--------+--------------+----------------+------------------+-------+------------+--------------------------------------------------------------------+
+; Slack  ; Actual Width ; Required Width ; Type             ; Clock ; Clock Edge ; Target                                                             ;
++--------+--------------+----------------+------------------+-------+------------+--------------------------------------------------------------------+
+; -1.941 ; 1.000        ; 2.941          ; Port Rate        ; clk   ; Rise       ; clk                                                                ;
+; -0.742 ; 0.500        ; 1.242          ; High Pulse Width ; clk   ; Rise       ; ALU:a0|a_ff[2]                                                     ;
+; -0.742 ; 0.500        ; 1.242          ; Low Pulse Width  ; clk   ; Rise       ; ALU:a0|a_ff[2]                                                     ;
+; -0.742 ; 0.500        ; 1.242          ; High Pulse Width ; clk   ; Rise       ; ALU:a0|sel_ff[0]                                                   ;
+; -0.742 ; 0.500        ; 1.242          ; Low Pulse Width  ; clk   ; Rise       ; ALU:a0|sel_ff[0]                                                   ;
+; -0.742 ; 0.500        ; 1.242          ; High Pulse Width ; clk   ; Rise       ; ALU:a0|sel_ff[1]                                                   ;
+; -0.742 ; 0.500        ; 1.242          ; Low Pulse Width  ; clk   ; Rise       ; ALU:a0|sel_ff[1]                                                   ;
+; -0.742 ; 0.500        ; 1.242          ; High Pulse Width ; clk   ; Rise       ; ALU:a0|sel_ff[2]                                                   ;
+; -0.742 ; 0.500        ; 1.242          ; Low Pulse Width  ; clk   ; Rise       ; ALU:a0|sel_ff[2]                                                   ;
+; -0.742 ; 0.500        ; 1.242          ; High Pulse Width ; clk   ; Rise       ; ALU:a0|sel_ff[3]                                                   ;
+; -0.742 ; 0.500        ; 1.242          ; Low Pulse Width  ; clk   ; Rise       ; ALU:a0|sel_ff[3]                                                   ;
+; -0.742 ; 0.500        ; 1.242          ; High Pulse Width ; clk   ; Rise       ; ALU:a0|y[0]                                                        ;
+; -0.742 ; 0.500        ; 1.242          ; Low Pulse Width  ; clk   ; Rise       ; ALU:a0|y[0]                                                        ;
+; -0.742 ; 0.500        ; 1.242          ; High Pulse Width ; clk   ; Rise       ; ALU:a0|y[1]                                                        ;
+; -0.742 ; 0.500        ; 1.242          ; Low Pulse Width  ; clk   ; Rise       ; ALU:a0|y[1]                                                        ;
+; -0.742 ; 0.500        ; 1.242          ; High Pulse Width ; clk   ; Rise       ; ALU:a0|y[2]                                                        ;
+; -0.742 ; 0.500        ; 1.242          ; Low Pulse Width  ; clk   ; Rise       ; ALU:a0|y[2]                                                        ;
+; -0.742 ; 0.500        ; 1.242          ; High Pulse Width ; clk   ; Rise       ; ALU:a0|y[3]                                                        ;
+; -0.742 ; 0.500        ; 1.242          ; Low Pulse Width  ; clk   ; Rise       ; ALU:a0|y[3]                                                        ;
+; -0.742 ; 0.500        ; 1.242          ; High Pulse Width ; clk   ; Rise       ; ALU:a0|y[5]                                                        ;
+; -0.742 ; 0.500        ; 1.242          ; Low Pulse Width  ; clk   ; Rise       ; ALU:a0|y[5]                                                        ;
+; -0.742 ; 0.500        ; 1.242          ; High Pulse Width ; clk   ; Rise       ; ALU:a0|y[7]                                                        ;
+; -0.742 ; 0.500        ; 1.242          ; Low Pulse Width  ; clk   ; Rise       ; ALU:a0|y[7]                                                        ;
+; -0.742 ; 0.500        ; 1.242          ; High Pulse Width ; clk   ; Rise       ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[0]  ;
+; -0.742 ; 0.500        ; 1.242          ; Low Pulse Width  ; clk   ; Rise       ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[0]  ;
+; -0.742 ; 0.500        ; 1.242          ; High Pulse Width ; clk   ; Rise       ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[10] ;
+; -0.742 ; 0.500        ; 1.242          ; Low Pulse Width  ; clk   ; Rise       ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[10] ;
+; -0.742 ; 0.500        ; 1.242          ; High Pulse Width ; clk   ; Rise       ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[11] ;
+; -0.742 ; 0.500        ; 1.242          ; Low Pulse Width  ; clk   ; Rise       ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[11] ;
+; -0.742 ; 0.500        ; 1.242          ; High Pulse Width ; clk   ; Rise       ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[12] ;
+; -0.742 ; 0.500        ; 1.242          ; Low Pulse Width  ; clk   ; Rise       ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[12] ;
+; -0.742 ; 0.500        ; 1.242          ; High Pulse Width ; clk   ; Rise       ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[13] ;
+; -0.742 ; 0.500        ; 1.242          ; Low Pulse Width  ; clk   ; Rise       ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[13] ;
+; -0.742 ; 0.500        ; 1.242          ; High Pulse Width ; clk   ; Rise       ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[14] ;
+; -0.742 ; 0.500        ; 1.242          ; Low Pulse Width  ; clk   ; Rise       ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[14] ;
+; -0.742 ; 0.500        ; 1.242          ; High Pulse Width ; clk   ; Rise       ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[15] ;
+; -0.742 ; 0.500        ; 1.242          ; Low Pulse Width  ; clk   ; Rise       ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[15] ;
+; -0.742 ; 0.500        ; 1.242          ; High Pulse Width ; clk   ; Rise       ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[16] ;
+; -0.742 ; 0.500        ; 1.242          ; Low Pulse Width  ; clk   ; Rise       ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[16] ;
+; -0.742 ; 0.500        ; 1.242          ; High Pulse Width ; clk   ; Rise       ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[17] ;
+; -0.742 ; 0.500        ; 1.242          ; Low Pulse Width  ; clk   ; Rise       ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[17] ;
+; -0.742 ; 0.500        ; 1.242          ; High Pulse Width ; clk   ; Rise       ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[1]  ;
+; -0.742 ; 0.500        ; 1.242          ; Low Pulse Width  ; clk   ; Rise       ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[1]  ;
+; -0.742 ; 0.500        ; 1.242          ; High Pulse Width ; clk   ; Rise       ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[2]  ;
+; -0.742 ; 0.500        ; 1.242          ; Low Pulse Width  ; clk   ; Rise       ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[2]  ;
+; -0.742 ; 0.500        ; 1.242          ; High Pulse Width ; clk   ; Rise       ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[3]  ;
+; -0.742 ; 0.500        ; 1.242          ; Low Pulse Width  ; clk   ; Rise       ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[3]  ;
+; -0.742 ; 0.500        ; 1.242          ; High Pulse Width ; clk   ; Rise       ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[4]  ;
+; -0.742 ; 0.500        ; 1.242          ; Low Pulse Width  ; clk   ; Rise       ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[4]  ;
+; -0.742 ; 0.500        ; 1.242          ; High Pulse Width ; clk   ; Rise       ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[5]  ;
+; -0.742 ; 0.500        ; 1.242          ; Low Pulse Width  ; clk   ; Rise       ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[5]  ;
+; -0.742 ; 0.500        ; 1.242          ; High Pulse Width ; clk   ; Rise       ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[6]  ;
+; -0.742 ; 0.500        ; 1.242          ; Low Pulse Width  ; clk   ; Rise       ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[6]  ;
+; -0.742 ; 0.500        ; 1.242          ; High Pulse Width ; clk   ; Rise       ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[7]  ;
+; -0.742 ; 0.500        ; 1.242          ; Low Pulse Width  ; clk   ; Rise       ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[7]  ;
+; -0.742 ; 0.500        ; 1.242          ; High Pulse Width ; clk   ; Rise       ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[8]  ;
+; -0.742 ; 0.500        ; 1.242          ; Low Pulse Width  ; clk   ; Rise       ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[8]  ;
+; -0.742 ; 0.500        ; 1.242          ; High Pulse Width ; clk   ; Rise       ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[9]  ;
+; -0.742 ; 0.500        ; 1.242          ; Low Pulse Width  ; clk   ; Rise       ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[9]  ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; a0|a_ff[2]|clk                                                     ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; a0|a_ff[2]|clk                                                     ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; a0|sel_ff[0]|clk                                                   ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; a0|sel_ff[0]|clk                                                   ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; a0|sel_ff[1]|clk                                                   ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; a0|sel_ff[1]|clk                                                   ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; a0|sel_ff[2]|clk                                                   ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; a0|sel_ff[2]|clk                                                   ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; a0|sel_ff[3]|clk                                                   ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; a0|sel_ff[3]|clk                                                   ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; a0|y[0]|clk                                                        ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; a0|y[0]|clk                                                        ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; a0|y[1]|clk                                                        ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; a0|y[1]|clk                                                        ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; a0|y[2]|clk                                                        ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; a0|y[2]|clk                                                        ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; a0|y[3]|clk                                                        ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; a0|y[3]|clk                                                        ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; a0|y[5]|clk                                                        ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; a0|y[5]|clk                                                        ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; a0|y[7]|clk                                                        ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; a0|y[7]|clk                                                        ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; clk|combout                                                        ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; clk|combout                                                        ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; clk~clkctrl|inclk[0]                                               ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; clk~clkctrl|inclk[0]                                               ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; clk~clkctrl|outclk                                                 ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; clk~clkctrl|outclk                                                 ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; disp0|seven_seg_ctrl|counter[0]|clk                                ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; disp0|seven_seg_ctrl|counter[0]|clk                                ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; disp0|seven_seg_ctrl|counter[10]|clk                               ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; disp0|seven_seg_ctrl|counter[10]|clk                               ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; disp0|seven_seg_ctrl|counter[11]|clk                               ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; disp0|seven_seg_ctrl|counter[11]|clk                               ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; disp0|seven_seg_ctrl|counter[12]|clk                               ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; disp0|seven_seg_ctrl|counter[12]|clk                               ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; disp0|seven_seg_ctrl|counter[13]|clk                               ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; disp0|seven_seg_ctrl|counter[13]|clk                               ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; disp0|seven_seg_ctrl|counter[14]|clk                               ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; disp0|seven_seg_ctrl|counter[14]|clk                               ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; disp0|seven_seg_ctrl|counter[15]|clk                               ;
++--------+--------------+----------------+------------------+-------+------------+--------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------+
+; Setup Times                                                           ;
++-----------+------------+-------+-------+------------+-----------------+
+; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+------------+-------+-------+------------+-----------------+
+; rst_n     ; clk        ; 5.700 ; 5.700 ; Rise       ; clk             ;
+; sel[*]    ; clk        ; 6.566 ; 6.566 ; Rise       ; clk             ;
+;  sel[0]   ; clk        ; 5.174 ; 5.174 ; Rise       ; clk             ;
+;  sel[1]   ; clk        ; 5.253 ; 5.253 ; Rise       ; clk             ;
+;  sel[2]   ; clk        ; 5.317 ; 5.317 ; Rise       ; clk             ;
+;  sel[3]   ; clk        ; 6.566 ; 6.566 ; Rise       ; clk             ;
++-----------+------------+-------+-------+------------+-----------------+
+
+
++-------------------------------------------------------------------------+
+; Hold Times                                                              ;
++-----------+------------+--------+--------+------------+-----------------+
+; Data Port ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++-----------+------------+--------+--------+------------+-----------------+
+; rst_n     ; clk        ; -5.434 ; -5.434 ; Rise       ; clk             ;
+; sel[*]    ; clk        ; -4.908 ; -4.908 ; Rise       ; clk             ;
+;  sel[0]   ; clk        ; -4.908 ; -4.908 ; Rise       ; clk             ;
+;  sel[1]   ; clk        ; -4.987 ; -4.987 ; Rise       ; clk             ;
+;  sel[2]   ; clk        ; -5.051 ; -5.051 ; Rise       ; clk             ;
+;  sel[3]   ; clk        ; -6.300 ; -6.300 ; Rise       ; clk             ;
++-----------+------------+--------+--------+------------+-----------------+
+
+
++-------------------------------------------------------------------------+
+; Clock to Output Times                                                   ;
++-----------+------------+--------+--------+------------+-----------------+
+; Data Port ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++-----------+------------+--------+--------+------------+-----------------+
+; an[*]     ; clk        ; 9.127  ; 9.127  ; Rise       ; clk             ;
+;  an[0]    ; clk        ; 9.127  ; 9.127  ; Rise       ; clk             ;
+;  an[1]    ; clk        ; 8.522  ; 8.522  ; Rise       ; clk             ;
+;  an[2]    ; clk        ; 8.422  ; 8.422  ; Rise       ; clk             ;
+;  an[3]    ; clk        ; 8.509  ; 8.509  ; Rise       ; clk             ;
+; seg[*]    ; clk        ; 24.829 ; 24.829 ; Rise       ; clk             ;
+;  seg[0]   ; clk        ; 23.217 ; 23.217 ; Rise       ; clk             ;
+;  seg[1]   ; clk        ; 22.368 ; 22.368 ; Rise       ; clk             ;
+;  seg[2]   ; clk        ; 24.829 ; 24.829 ; Rise       ; clk             ;
+;  seg[3]   ; clk        ; 23.522 ; 23.522 ; Rise       ; clk             ;
+;  seg[4]   ; clk        ; 22.712 ; 22.712 ; Rise       ; clk             ;
+;  seg[5]   ; clk        ; 23.538 ; 23.538 ; Rise       ; clk             ;
+;  seg[6]   ; clk        ; 22.893 ; 22.893 ; Rise       ; clk             ;
++-----------+------------+--------+--------+------------+-----------------+
+
+
++-------------------------------------------------------------------------+
+; Minimum Clock to Output Times                                           ;
++-----------+------------+--------+--------+------------+-----------------+
+; Data Port ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++-----------+------------+--------+--------+------------+-----------------+
+; an[*]     ; clk        ; 8.240  ; 8.240  ; Rise       ; clk             ;
+;  an[0]    ; clk        ; 8.947  ; 8.947  ; Rise       ; clk             ;
+;  an[1]    ; clk        ; 8.261  ; 8.261  ; Rise       ; clk             ;
+;  an[2]    ; clk        ; 8.240  ; 8.240  ; Rise       ; clk             ;
+;  an[3]    ; clk        ; 8.249  ; 8.249  ; Rise       ; clk             ;
+; seg[*]    ; clk        ; 9.679  ; 9.679  ; Rise       ; clk             ;
+;  seg[0]   ; clk        ; 10.821 ; 10.821 ; Rise       ; clk             ;
+;  seg[1]   ; clk        ; 10.830 ; 10.830 ; Rise       ; clk             ;
+;  seg[2]   ; clk        ; 9.679  ; 9.679  ; Rise       ; clk             ;
+;  seg[3]   ; clk        ; 11.190 ; 11.190 ; Rise       ; clk             ;
+;  seg[4]   ; clk        ; 11.166 ; 11.166 ; Rise       ; clk             ;
+;  seg[5]   ; clk        ; 11.190 ; 11.190 ; Rise       ; clk             ;
+;  seg[6]   ; clk        ; 10.591 ; 10.591 ; Rise       ; clk             ;
++-----------+------------+--------+--------+------------+-----------------+
+
+
++--------------------------------------------------------------+
+; Propagation Delay                                            ;
++------------+-------------+--------+--------+--------+--------+
+; Input Port ; Output Port ; RR     ; RF     ; FR     ; FF     ;
++------------+-------------+--------+--------+--------+--------+
+; sel[3]     ; seg[0]      ; 22.643 ; 22.643 ; 22.643 ; 22.643 ;
+; sel[3]     ; seg[1]      ; 21.610 ; 21.610 ; 21.610 ; 21.610 ;
+; sel[3]     ; seg[2]      ; 24.255 ; 24.255 ; 24.255 ; 24.255 ;
+; sel[3]     ; seg[3]      ; 22.948 ; 22.948 ; 22.948 ; 22.948 ;
+; sel[3]     ; seg[4]      ; 21.929 ; 21.929 ; 21.929 ; 21.929 ;
+; sel[3]     ; seg[5]      ; 22.964 ; 22.964 ; 22.964 ; 22.964 ;
+; sel[3]     ; seg[6]      ; 21.964 ; 21.964 ; 21.964 ; 21.964 ;
++------------+-------------+--------+--------+--------+--------+
+
+
++--------------------------------------------------------------+
+; Minimum Propagation Delay                                    ;
++------------+-------------+--------+--------+--------+--------+
+; Input Port ; Output Port ; RR     ; RF     ; FR     ; FF     ;
++------------+-------------+--------+--------+--------+--------+
+; sel[3]     ; seg[0]      ; 16.644 ; 15.536 ; 15.536 ; 16.644 ;
+; sel[3]     ; seg[1]      ; 15.545 ; 15.545 ; 15.545 ; 15.545 ;
+; sel[3]     ; seg[2]      ; 19.535 ; 14.444 ; 14.444 ; 19.535 ;
+; sel[3]     ; seg[3]      ; 17.892 ; 15.905 ; 15.905 ; 17.892 ;
+; sel[3]     ; seg[4]      ; 17.457 ; 15.881 ; 15.881 ; 17.457 ;
+; sel[3]     ; seg[5]      ; 17.006 ; 15.905 ; 15.905 ; 17.006 ;
+; sel[3]     ; seg[6]      ; 15.306 ; 17.236 ; 17.236 ; 15.306 ;
++------------+-------------+--------+--------+--------+--------+
+
+
++--------------------------------+
+; Fast Model Setup Summary       ;
++-------+--------+---------------+
+; Clock ; Slack  ; End Point TNS ;
++-------+--------+---------------+
+; clk   ; -0.268 ; -0.830        ;
++-------+--------+---------------+
+
+
++-------------------------------+
+; Fast Model Hold Summary       ;
++-------+-------+---------------+
+; Clock ; Slack ; End Point TNS ;
++-------+-------+---------------+
+; clk   ; 0.215 ; 0.000         ;
++-------+-------+---------------+
+
+
+-------------------------------
+; Fast Model Recovery Summary ;
+-------------------------------
+No paths to report.
+
+
+------------------------------
+; Fast Model Removal Summary ;
+------------------------------
+No paths to report.
+
+
++----------------------------------------+
+; Fast Model Minimum Pulse Width Summary ;
++-------+--------+-----------------------+
+; Clock ; Slack  ; End Point TNS         ;
++-------+--------+-----------------------+
+; clk   ; -1.380 ; -30.380               ;
++-------+--------+-----------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Fast Model Setup: 'clk'                                                                                                                                                                                                ;
++--------+--------------------------------------------------------------------+--------------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack  ; From Node                                                          ; To Node                                                            ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+--------------------------------------------------------------------+--------------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; -0.268 ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[1]  ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[17] ; clk          ; clk         ; 1.000        ; -0.003     ; 1.297      ;
+; -0.254 ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[0]  ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[17] ; clk          ; clk         ; 1.000        ; -0.003     ; 1.283      ;
+; -0.218 ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[2]  ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[17] ; clk          ; clk         ; 1.000        ; -0.003     ; 1.247      ;
+; -0.198 ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[3]  ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[17] ; clk          ; clk         ; 1.000        ; -0.003     ; 1.227      ;
+; -0.174 ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[1]  ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[16] ; clk          ; clk         ; 1.000        ; -0.003     ; 1.203      ;
+; -0.160 ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[0]  ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[16] ; clk          ; clk         ; 1.000        ; -0.003     ; 1.189      ;
+; -0.148 ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[4]  ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[17] ; clk          ; clk         ; 1.000        ; -0.003     ; 1.177      ;
+; -0.139 ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[1]  ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[15] ; clk          ; clk         ; 1.000        ; -0.003     ; 1.168      ;
+; -0.129 ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[5]  ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[17] ; clk          ; clk         ; 1.000        ; -0.003     ; 1.158      ;
+; -0.125 ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[0]  ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[15] ; clk          ; clk         ; 1.000        ; -0.003     ; 1.154      ;
+; -0.124 ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[2]  ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[16] ; clk          ; clk         ; 1.000        ; -0.003     ; 1.153      ;
+; -0.104 ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[1]  ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[14] ; clk          ; clk         ; 1.000        ; -0.003     ; 1.133      ;
+; -0.104 ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[3]  ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[16] ; clk          ; clk         ; 1.000        ; -0.003     ; 1.133      ;
+; -0.090 ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[0]  ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[14] ; clk          ; clk         ; 1.000        ; -0.003     ; 1.119      ;
+; -0.089 ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[2]  ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[15] ; clk          ; clk         ; 1.000        ; -0.003     ; 1.118      ;
+; -0.081 ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[6]  ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[17] ; clk          ; clk         ; 1.000        ; -0.003     ; 1.110      ;
+; -0.069 ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[1]  ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[13] ; clk          ; clk         ; 1.000        ; -0.003     ; 1.098      ;
+; -0.069 ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[3]  ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[15] ; clk          ; clk         ; 1.000        ; -0.003     ; 1.098      ;
+; -0.055 ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[0]  ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[13] ; clk          ; clk         ; 1.000        ; -0.003     ; 1.084      ;
+; -0.054 ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[4]  ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[16] ; clk          ; clk         ; 1.000        ; -0.003     ; 1.083      ;
+; -0.054 ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[2]  ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[14] ; clk          ; clk         ; 1.000        ; -0.003     ; 1.083      ;
+; -0.046 ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[7]  ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[17] ; clk          ; clk         ; 1.000        ; -0.003     ; 1.075      ;
+; -0.042 ; ALU:a0|sel_ff[3]                                                   ; ALU:a0|y[5]                                                        ; clk          ; clk         ; 1.000        ; 0.000      ; 1.074      ;
+; -0.035 ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[5]  ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[16] ; clk          ; clk         ; 1.000        ; -0.003     ; 1.064      ;
+; -0.034 ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[1]  ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[12] ; clk          ; clk         ; 1.000        ; -0.003     ; 1.063      ;
+; -0.034 ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[3]  ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[14] ; clk          ; clk         ; 1.000        ; -0.003     ; 1.063      ;
+; -0.020 ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[0]  ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[12] ; clk          ; clk         ; 1.000        ; -0.003     ; 1.049      ;
+; -0.019 ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[4]  ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[15] ; clk          ; clk         ; 1.000        ; -0.003     ; 1.048      ;
+; -0.019 ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[2]  ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[13] ; clk          ; clk         ; 1.000        ; -0.003     ; 1.048      ;
+; -0.006 ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[8]  ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[17] ; clk          ; clk         ; 1.000        ; -0.003     ; 1.035      ;
+; 0.000  ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[5]  ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[15] ; clk          ; clk         ; 1.000        ; -0.003     ; 1.029      ;
+; 0.001  ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[1]  ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[11] ; clk          ; clk         ; 1.000        ; -0.003     ; 1.028      ;
+; 0.001  ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[3]  ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[13] ; clk          ; clk         ; 1.000        ; -0.003     ; 1.028      ;
+; 0.005  ; ALU:a0|a_ff[2]                                                     ; ALU:a0|y[5]                                                        ; clk          ; clk         ; 1.000        ; 0.000      ; 1.027      ;
+; 0.013  ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[6]  ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[16] ; clk          ; clk         ; 1.000        ; -0.003     ; 1.016      ;
+; 0.015  ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[0]  ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[11] ; clk          ; clk         ; 1.000        ; -0.003     ; 1.014      ;
+; 0.016  ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[4]  ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[14] ; clk          ; clk         ; 1.000        ; -0.003     ; 1.013      ;
+; 0.016  ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[2]  ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[12] ; clk          ; clk         ; 1.000        ; -0.003     ; 1.013      ;
+; 0.035  ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[5]  ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[14] ; clk          ; clk         ; 1.000        ; -0.003     ; 0.994      ;
+; 0.036  ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[1]  ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[10] ; clk          ; clk         ; 1.000        ; -0.003     ; 0.993      ;
+; 0.036  ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[3]  ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[12] ; clk          ; clk         ; 1.000        ; -0.003     ; 0.993      ;
+; 0.048  ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[7]  ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[16] ; clk          ; clk         ; 1.000        ; -0.003     ; 0.981      ;
+; 0.048  ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[6]  ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[15] ; clk          ; clk         ; 1.000        ; -0.003     ; 0.981      ;
+; 0.050  ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[0]  ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[10] ; clk          ; clk         ; 1.000        ; -0.003     ; 0.979      ;
+; 0.051  ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[4]  ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[13] ; clk          ; clk         ; 1.000        ; -0.003     ; 0.978      ;
+; 0.051  ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[2]  ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[11] ; clk          ; clk         ; 1.000        ; -0.003     ; 0.978      ;
+; 0.069  ; ALU:a0|sel_ff[2]                                                   ; ALU:a0|y[1]                                                        ; clk          ; clk         ; 1.000        ; 0.000      ; 0.963      ;
+; 0.070  ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[5]  ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[13] ; clk          ; clk         ; 1.000        ; -0.003     ; 0.959      ;
+; 0.071  ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[1]  ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[9]  ; clk          ; clk         ; 1.000        ; -0.003     ; 0.958      ;
+; 0.071  ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[3]  ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[11] ; clk          ; clk         ; 1.000        ; -0.003     ; 0.958      ;
+; 0.083  ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[7]  ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[15] ; clk          ; clk         ; 1.000        ; -0.003     ; 0.946      ;
+; 0.083  ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[6]  ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[14] ; clk          ; clk         ; 1.000        ; -0.003     ; 0.946      ;
+; 0.085  ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[9]  ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[17] ; clk          ; clk         ; 1.000        ; 0.000      ; 0.947      ;
+; 0.085  ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[0]  ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[9]  ; clk          ; clk         ; 1.000        ; -0.003     ; 0.944      ;
+; 0.086  ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[4]  ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[12] ; clk          ; clk         ; 1.000        ; -0.003     ; 0.943      ;
+; 0.086  ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[2]  ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[10] ; clk          ; clk         ; 1.000        ; -0.003     ; 0.943      ;
+; 0.087  ; ALU:a0|sel_ff[3]                                                   ; ALU:a0|y[1]                                                        ; clk          ; clk         ; 1.000        ; 0.000      ; 0.945      ;
+; 0.088  ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[8]  ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[16] ; clk          ; clk         ; 1.000        ; -0.003     ; 0.941      ;
+; 0.104  ; ALU:a0|sel_ff[1]                                                   ; ALU:a0|y[5]                                                        ; clk          ; clk         ; 1.000        ; 0.000      ; 0.928      ;
+; 0.105  ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[5]  ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[12] ; clk          ; clk         ; 1.000        ; -0.003     ; 0.924      ;
+; 0.106  ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[3]  ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[10] ; clk          ; clk         ; 1.000        ; -0.003     ; 0.923      ;
+; 0.118  ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[7]  ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[14] ; clk          ; clk         ; 1.000        ; -0.003     ; 0.911      ;
+; 0.118  ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[6]  ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[13] ; clk          ; clk         ; 1.000        ; -0.003     ; 0.911      ;
+; 0.120  ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[10] ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[17] ; clk          ; clk         ; 1.000        ; 0.000      ; 0.912      ;
+; 0.121  ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[4]  ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[11] ; clk          ; clk         ; 1.000        ; -0.003     ; 0.908      ;
+; 0.121  ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[2]  ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[9]  ; clk          ; clk         ; 1.000        ; -0.003     ; 0.908      ;
+; 0.123  ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[8]  ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[15] ; clk          ; clk         ; 1.000        ; -0.003     ; 0.906      ;
+; 0.138  ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[11] ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[17] ; clk          ; clk         ; 1.000        ; 0.000      ; 0.894      ;
+; 0.140  ; ALU:a0|sel_ff[0]                                                   ; ALU:a0|y[2]                                                        ; clk          ; clk         ; 1.000        ; 0.001      ; 0.893      ;
+; 0.140  ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[5]  ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[11] ; clk          ; clk         ; 1.000        ; -0.003     ; 0.889      ;
+; 0.141  ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[3]  ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[9]  ; clk          ; clk         ; 1.000        ; -0.003     ; 0.888      ;
+; 0.145  ; ALU:a0|sel_ff[2]                                                   ; ALU:a0|y[5]                                                        ; clk          ; clk         ; 1.000        ; 0.000      ; 0.887      ;
+; 0.147  ; ALU:a0|sel_ff[2]                                                   ; ALU:a0|y[7]                                                        ; clk          ; clk         ; 1.000        ; 0.000      ; 0.885      ;
+; 0.153  ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[7]  ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[13] ; clk          ; clk         ; 1.000        ; -0.003     ; 0.876      ;
+; 0.153  ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[6]  ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[12] ; clk          ; clk         ; 1.000        ; -0.003     ; 0.876      ;
+; 0.154  ; ALU:a0|sel_ff[2]                                                   ; ALU:a0|y[0]                                                        ; clk          ; clk         ; 1.000        ; 0.000      ; 0.878      ;
+; 0.156  ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[4]  ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[10] ; clk          ; clk         ; 1.000        ; -0.003     ; 0.873      ;
+; 0.158  ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[8]  ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[14] ; clk          ; clk         ; 1.000        ; -0.003     ; 0.871      ;
+; 0.159  ; ALU:a0|sel_ff[2]                                                   ; ALU:a0|y[3]                                                        ; clk          ; clk         ; 1.000        ; 0.000      ; 0.873      ;
+; 0.161  ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[1]  ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[8]  ; clk          ; clk         ; 1.000        ; 0.000      ; 0.871      ;
+; 0.164  ; ALU:a0|sel_ff[3]                                                   ; ALU:a0|y[0]                                                        ; clk          ; clk         ; 1.000        ; 0.000      ; 0.868      ;
+; 0.169  ; ALU:a0|sel_ff[3]                                                   ; ALU:a0|y[3]                                                        ; clk          ; clk         ; 1.000        ; 0.000      ; 0.863      ;
+; 0.172  ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[12] ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[17] ; clk          ; clk         ; 1.000        ; 0.000      ; 0.860      ;
+; 0.175  ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[5]  ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[10] ; clk          ; clk         ; 1.000        ; -0.003     ; 0.854      ;
+; 0.175  ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[0]  ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[8]  ; clk          ; clk         ; 1.000        ; 0.000      ; 0.857      ;
+; 0.179  ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[9]  ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[16] ; clk          ; clk         ; 1.000        ; 0.000      ; 0.853      ;
+; 0.181  ; ALU:a0|a_ff[2]                                                     ; ALU:a0|y[2]                                                        ; clk          ; clk         ; 1.000        ; 0.001      ; 0.852      ;
+; 0.188  ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[7]  ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[12] ; clk          ; clk         ; 1.000        ; -0.003     ; 0.841      ;
+; 0.188  ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[6]  ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[11] ; clk          ; clk         ; 1.000        ; -0.003     ; 0.841      ;
+; 0.191  ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[4]  ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[9]  ; clk          ; clk         ; 1.000        ; -0.003     ; 0.838      ;
+; 0.193  ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[8]  ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[13] ; clk          ; clk         ; 1.000        ; -0.003     ; 0.836      ;
+; 0.194  ; ALU:a0|sel_ff[0]                                                   ; ALU:a0|y[1]                                                        ; clk          ; clk         ; 1.000        ; 0.000      ; 0.838      ;
+; 0.196  ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[1]  ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[7]  ; clk          ; clk         ; 1.000        ; 0.000      ; 0.836      ;
+; 0.197  ; ALU:a0|sel_ff[0]                                                   ; ALU:a0|y[5]                                                        ; clk          ; clk         ; 1.000        ; 0.000      ; 0.835      ;
+; 0.199  ; ALU:a0|sel_ff[0]                                                   ; ALU:a0|y[7]                                                        ; clk          ; clk         ; 1.000        ; 0.000      ; 0.833      ;
+; 0.204  ; ALU:a0|sel_ff[2]                                                   ; ALU:a0|y[2]                                                        ; clk          ; clk         ; 1.000        ; 0.001      ; 0.829      ;
+; 0.206  ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[13] ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[17] ; clk          ; clk         ; 1.000        ; 0.000      ; 0.826      ;
+; 0.210  ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[5]  ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[9]  ; clk          ; clk         ; 1.000        ; -0.003     ; 0.819      ;
+; 0.210  ; ALU:a0|sel_ff[3]                                                   ; ALU:a0|y[7]                                                        ; clk          ; clk         ; 1.000        ; 0.000      ; 0.822      ;
+; 0.210  ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[0]  ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[7]  ; clk          ; clk         ; 1.000        ; 0.000      ; 0.822      ;
++--------+--------------------------------------------------------------------+--------------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Fast Model Hold: 'clk'                                                                                                                                                                                                ;
++-------+--------------------------------------------------------------------+--------------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack ; From Node                                                          ; To Node                                                            ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+--------------------------------------------------------------------+--------------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; 0.215 ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[0]  ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[0]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.353 ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[9]  ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[9]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.505      ;
+; 0.353 ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[10] ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[10] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.505      ;
+; 0.356 ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[2]  ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[2]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.508      ;
+; 0.356 ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[4]  ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[4]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.508      ;
+; 0.359 ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[6]  ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[6]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.511      ;
+; 0.359 ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[7]  ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[7]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.511      ;
+; 0.359 ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[8]  ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[8]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.511      ;
+; 0.360 ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[0]  ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[1]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.512      ;
+; 0.369 ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[3]  ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[3]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.521      ;
+; 0.369 ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[12] ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[12] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.521      ;
+; 0.369 ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[1]  ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[1]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.521      ;
+; 0.370 ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[5]  ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[5]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.522      ;
+; 0.370 ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[11] ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[11] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.522      ;
+; 0.370 ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[14] ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[14] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.522      ;
+; 0.370 ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[15] ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[15] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.522      ;
+; 0.372 ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[13] ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[13] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.524      ;
+; 0.380 ; ALU:a0|sel_ff[2]                                                   ; ALU:a0|y[1]                                                        ; clk          ; clk         ; 0.000        ; 0.000      ; 0.532      ;
+; 0.385 ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[16] ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[16] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.537      ;
+; 0.386 ; ALU:a0|sel_ff[1]                                                   ; ALU:a0|y[7]                                                        ; clk          ; clk         ; 0.000        ; 0.000      ; 0.538      ;
+; 0.388 ; ALU:a0|sel_ff[1]                                                   ; ALU:a0|y[5]                                                        ; clk          ; clk         ; 0.000        ; 0.000      ; 0.540      ;
+; 0.393 ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[17] ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[17] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.545      ;
+; 0.431 ; ALU:a0|a_ff[2]                                                     ; ALU:a0|y[3]                                                        ; clk          ; clk         ; 0.000        ; 0.000      ; 0.583      ;
+; 0.432 ; ALU:a0|a_ff[2]                                                     ; ALU:a0|y[0]                                                        ; clk          ; clk         ; 0.000        ; 0.000      ; 0.584      ;
+; 0.446 ; ALU:a0|sel_ff[3]                                                   ; ALU:a0|y[7]                                                        ; clk          ; clk         ; 0.000        ; 0.000      ; 0.598      ;
+; 0.451 ; ALU:a0|a_ff[2]                                                     ; ALU:a0|y[1]                                                        ; clk          ; clk         ; 0.000        ; 0.000      ; 0.603      ;
+; 0.452 ; ALU:a0|sel_ff[2]                                                   ; ALU:a0|y[2]                                                        ; clk          ; clk         ; 0.000        ; 0.001      ; 0.605      ;
+; 0.469 ; ALU:a0|sel_ff[1]                                                   ; ALU:a0|y[3]                                                        ; clk          ; clk         ; 0.000        ; 0.000      ; 0.621      ;
+; 0.475 ; ALU:a0|sel_ff[1]                                                   ; ALU:a0|y[0]                                                        ; clk          ; clk         ; 0.000        ; 0.000      ; 0.627      ;
+; 0.491 ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[9]  ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[10] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.643      ;
+; 0.491 ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[10] ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[11] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.643      ;
+; 0.494 ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[2]  ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[3]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.646      ;
+; 0.494 ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[4]  ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[5]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.646      ;
+; 0.494 ; ALU:a0|sel_ff[3]                                                   ; ALU:a0|y[2]                                                        ; clk          ; clk         ; 0.000        ; 0.001      ; 0.647      ;
+; 0.495 ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[0]  ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[2]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.647      ;
+; 0.497 ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[6]  ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[7]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.649      ;
+; 0.497 ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[7]  ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[8]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.649      ;
+; 0.508 ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[11] ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[12] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.660      ;
+; 0.509 ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[3]  ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[4]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.661      ;
+; 0.509 ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[12] ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[13] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.661      ;
+; 0.509 ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[1]  ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[2]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.661      ;
+; 0.510 ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[5]  ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[6]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.662      ;
+; 0.510 ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[13] ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[14] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.662      ;
+; 0.510 ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[14] ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[15] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.662      ;
+; 0.510 ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[15] ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[16] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.662      ;
+; 0.517 ; ALU:a0|sel_ff[1]                                                   ; ALU:a0|y[1]                                                        ; clk          ; clk         ; 0.000        ; 0.000      ; 0.669      ;
+; 0.526 ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[9]  ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[11] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.678      ;
+; 0.526 ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[10] ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[12] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.678      ;
+; 0.529 ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[2]  ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[4]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.681      ;
+; 0.529 ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[4]  ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[6]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.681      ;
+; 0.530 ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[0]  ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[3]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.682      ;
+; 0.532 ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[6]  ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[8]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.684      ;
+; 0.543 ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[11] ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[13] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.695      ;
+; 0.544 ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[3]  ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[5]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.696      ;
+; 0.544 ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[12] ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[14] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.696      ;
+; 0.544 ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[1]  ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[3]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.696      ;
+; 0.545 ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[5]  ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[7]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.697      ;
+; 0.545 ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[13] ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[15] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.697      ;
+; 0.545 ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[14] ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[16] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.697      ;
+; 0.547 ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[8]  ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[9]  ; clk          ; clk         ; 0.000        ; -0.003     ; 0.696      ;
+; 0.550 ; ALU:a0|sel_ff[1]                                                   ; ALU:a0|y[2]                                                        ; clk          ; clk         ; 0.000        ; 0.001      ; 0.703      ;
+; 0.555 ; ALU:a0|sel_ff[0]                                                   ; ALU:a0|y[1]                                                        ; clk          ; clk         ; 0.000        ; 0.000      ; 0.707      ;
+; 0.561 ; ALU:a0|sel_ff[0]                                                   ; ALU:a0|y[0]                                                        ; clk          ; clk         ; 0.000        ; 0.000      ; 0.713      ;
+; 0.561 ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[9]  ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[12] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.713      ;
+; 0.561 ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[10] ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[13] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.713      ;
+; 0.562 ; ALU:a0|sel_ff[2]                                                   ; ALU:a0|y[7]                                                        ; clk          ; clk         ; 0.000        ; 0.000      ; 0.714      ;
+; 0.562 ; ALU:a0|sel_ff[0]                                                   ; ALU:a0|y[3]                                                        ; clk          ; clk         ; 0.000        ; 0.000      ; 0.714      ;
+; 0.564 ; ALU:a0|sel_ff[2]                                                   ; ALU:a0|y[5]                                                        ; clk          ; clk         ; 0.000        ; 0.000      ; 0.716      ;
+; 0.564 ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[2]  ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[5]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.716      ;
+; 0.564 ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[4]  ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[7]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.716      ;
+; 0.565 ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[0]  ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[4]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.717      ;
+; 0.578 ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[16] ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[17] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.730      ;
+; 0.578 ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[11] ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[14] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.730      ;
+; 0.579 ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[3]  ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[6]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.731      ;
+; 0.579 ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[12] ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[15] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.731      ;
+; 0.579 ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[1]  ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[4]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.731      ;
+; 0.580 ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[5]  ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[8]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.732      ;
+; 0.580 ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[13] ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[16] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.732      ;
+; 0.582 ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[8]  ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[10] ; clk          ; clk         ; 0.000        ; -0.003     ; 0.731      ;
+; 0.587 ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[7]  ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[9]  ; clk          ; clk         ; 0.000        ; -0.003     ; 0.736      ;
+; 0.595 ; ALU:a0|a_ff[2]                                                     ; ALU:a0|y[7]                                                        ; clk          ; clk         ; 0.000        ; 0.000      ; 0.747      ;
+; 0.596 ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[9]  ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[13] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.748      ;
+; 0.596 ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[10] ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[14] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.748      ;
+; 0.597 ; ALU:a0|a_ff[2]                                                     ; ALU:a0|y[5]                                                        ; clk          ; clk         ; 0.000        ; 0.000      ; 0.749      ;
+; 0.599 ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[2]  ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[6]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.751      ;
+; 0.599 ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[4]  ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[8]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.751      ;
+; 0.600 ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[0]  ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[5]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.752      ;
+; 0.604 ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[15] ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[17] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.756      ;
+; 0.613 ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[11] ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[15] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.765      ;
+; 0.614 ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[3]  ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[7]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.766      ;
+; 0.614 ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[12] ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[16] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.766      ;
+; 0.614 ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[1]  ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[5]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.766      ;
+; 0.617 ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[8]  ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[11] ; clk          ; clk         ; 0.000        ; -0.003     ; 0.766      ;
+; 0.618 ; ALU:a0|sel_ff[0]                                                   ; ALU:a0|y[7]                                                        ; clk          ; clk         ; 0.000        ; 0.000      ; 0.770      ;
+; 0.622 ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[7]  ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[10] ; clk          ; clk         ; 0.000        ; -0.003     ; 0.771      ;
+; 0.622 ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[6]  ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[9]  ; clk          ; clk         ; 0.000        ; -0.003     ; 0.771      ;
+; 0.631 ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[9]  ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[14] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.783      ;
+; 0.631 ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[10] ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[15] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.783      ;
+; 0.634 ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[2]  ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[7]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.786      ;
+; 0.635 ; ALU:a0|sel_ff[0]                                                   ; ALU:a0|y[5]                                                        ; clk          ; clk         ; 0.000        ; 0.000      ; 0.787      ;
++-------+--------------------------------------------------------------------+--------------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------+
+; Fast Model Minimum Pulse Width: 'clk'                                                                                                               ;
++--------+--------------+----------------+------------------+-------+------------+--------------------------------------------------------------------+
+; Slack  ; Actual Width ; Required Width ; Type             ; Clock ; Clock Edge ; Target                                                             ;
++--------+--------------+----------------+------------------+-------+------------+--------------------------------------------------------------------+
+; -1.380 ; 1.000        ; 2.380          ; Port Rate        ; clk   ; Rise       ; clk                                                                ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; ALU:a0|a_ff[2]                                                     ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; ALU:a0|a_ff[2]                                                     ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; ALU:a0|sel_ff[0]                                                   ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; ALU:a0|sel_ff[0]                                                   ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; ALU:a0|sel_ff[1]                                                   ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; ALU:a0|sel_ff[1]                                                   ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; ALU:a0|sel_ff[2]                                                   ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; ALU:a0|sel_ff[2]                                                   ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; ALU:a0|sel_ff[3]                                                   ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; ALU:a0|sel_ff[3]                                                   ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; ALU:a0|y[0]                                                        ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; ALU:a0|y[0]                                                        ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; ALU:a0|y[1]                                                        ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; ALU:a0|y[1]                                                        ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; ALU:a0|y[2]                                                        ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; ALU:a0|y[2]                                                        ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; ALU:a0|y[3]                                                        ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; ALU:a0|y[3]                                                        ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; ALU:a0|y[5]                                                        ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; ALU:a0|y[5]                                                        ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; ALU:a0|y[7]                                                        ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; ALU:a0|y[7]                                                        ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[0]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[0]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[10] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[10] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[11] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[11] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[12] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[12] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[13] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[13] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[14] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[14] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[15] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[15] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[16] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[16] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[17] ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[17] ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[1]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[1]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[2]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[2]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[3]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[3]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[4]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[4]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[5]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[5]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[6]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[6]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[7]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[7]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[8]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[8]  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[9]  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; digital_tube_decoder:disp0|display_ctrl:seven_seg_ctrl|counter[9]  ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; a0|a_ff[2]|clk                                                     ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; a0|a_ff[2]|clk                                                     ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; a0|sel_ff[0]|clk                                                   ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; a0|sel_ff[0]|clk                                                   ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; a0|sel_ff[1]|clk                                                   ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; a0|sel_ff[1]|clk                                                   ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; a0|sel_ff[2]|clk                                                   ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; a0|sel_ff[2]|clk                                                   ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; a0|sel_ff[3]|clk                                                   ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; a0|sel_ff[3]|clk                                                   ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; a0|y[0]|clk                                                        ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; a0|y[0]|clk                                                        ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; a0|y[1]|clk                                                        ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; a0|y[1]|clk                                                        ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; a0|y[2]|clk                                                        ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; a0|y[2]|clk                                                        ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; a0|y[3]|clk                                                        ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; a0|y[3]|clk                                                        ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; a0|y[5]|clk                                                        ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; a0|y[5]|clk                                                        ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; a0|y[7]|clk                                                        ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; a0|y[7]|clk                                                        ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; clk|combout                                                        ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; clk|combout                                                        ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; clk~clkctrl|inclk[0]                                               ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; clk~clkctrl|inclk[0]                                               ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; clk~clkctrl|outclk                                                 ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; clk~clkctrl|outclk                                                 ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; disp0|seven_seg_ctrl|counter[0]|clk                                ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; disp0|seven_seg_ctrl|counter[0]|clk                                ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; disp0|seven_seg_ctrl|counter[10]|clk                               ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; disp0|seven_seg_ctrl|counter[10]|clk                               ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; disp0|seven_seg_ctrl|counter[11]|clk                               ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; disp0|seven_seg_ctrl|counter[11]|clk                               ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; disp0|seven_seg_ctrl|counter[12]|clk                               ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; disp0|seven_seg_ctrl|counter[12]|clk                               ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; disp0|seven_seg_ctrl|counter[13]|clk                               ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; disp0|seven_seg_ctrl|counter[13]|clk                               ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; disp0|seven_seg_ctrl|counter[14]|clk                               ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; disp0|seven_seg_ctrl|counter[14]|clk                               ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; disp0|seven_seg_ctrl|counter[15]|clk                               ;
++--------+--------------+----------------+------------------+-------+------------+--------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------+
+; Setup Times                                                           ;
++-----------+------------+-------+-------+------------+-----------------+
+; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+------------+-------+-------+------------+-----------------+
+; rst_n     ; clk        ; 2.574 ; 2.574 ; Rise       ; clk             ;
+; sel[*]    ; clk        ; 2.861 ; 2.861 ; Rise       ; clk             ;
+;  sel[0]   ; clk        ; 2.327 ; 2.327 ; Rise       ; clk             ;
+;  sel[1]   ; clk        ; 2.352 ; 2.352 ; Rise       ; clk             ;
+;  sel[2]   ; clk        ; 2.381 ; 2.381 ; Rise       ; clk             ;
+;  sel[3]   ; clk        ; 2.861 ; 2.861 ; Rise       ; clk             ;
++-----------+------------+-------+-------+------------+-----------------+
+
+
++-------------------------------------------------------------------------+
+; Hold Times                                                              ;
++-----------+------------+--------+--------+------------+-----------------+
+; Data Port ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++-----------+------------+--------+--------+------------+-----------------+
+; rst_n     ; clk        ; -2.454 ; -2.454 ; Rise       ; clk             ;
+; sel[*]    ; clk        ; -2.207 ; -2.207 ; Rise       ; clk             ;
+;  sel[0]   ; clk        ; -2.207 ; -2.207 ; Rise       ; clk             ;
+;  sel[1]   ; clk        ; -2.232 ; -2.232 ; Rise       ; clk             ;
+;  sel[2]   ; clk        ; -2.261 ; -2.261 ; Rise       ; clk             ;
+;  sel[3]   ; clk        ; -2.741 ; -2.741 ; Rise       ; clk             ;
++-----------+------------+--------+--------+------------+-----------------+
+
+
++-----------------------------------------------------------------------+
+; Clock to Output Times                                                 ;
++-----------+------------+-------+-------+------------+-----------------+
+; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+------------+-------+-------+------------+-----------------+
+; an[*]     ; clk        ; 4.115 ; 4.115 ; Rise       ; clk             ;
+;  an[0]    ; clk        ; 4.115 ; 4.115 ; Rise       ; clk             ;
+;  an[1]    ; clk        ; 3.923 ; 3.923 ; Rise       ; clk             ;
+;  an[2]    ; clk        ; 3.906 ; 3.906 ; Rise       ; clk             ;
+;  an[3]    ; clk        ; 3.914 ; 3.914 ; Rise       ; clk             ;
+; seg[*]    ; clk        ; 8.767 ; 8.767 ; Rise       ; clk             ;
+;  seg[0]   ; clk        ; 8.261 ; 8.261 ; Rise       ; clk             ;
+;  seg[1]   ; clk        ; 8.068 ; 8.068 ; Rise       ; clk             ;
+;  seg[2]   ; clk        ; 8.767 ; 8.767 ; Rise       ; clk             ;
+;  seg[3]   ; clk        ; 8.374 ; 8.374 ; Rise       ; clk             ;
+;  seg[4]   ; clk        ; 8.176 ; 8.176 ; Rise       ; clk             ;
+;  seg[5]   ; clk        ; 8.388 ; 8.388 ; Rise       ; clk             ;
+;  seg[6]   ; clk        ; 8.165 ; 8.165 ; Rise       ; clk             ;
++-----------+------------+-------+-------+------------+-----------------+
+
+
++-----------------------------------------------------------------------+
+; Minimum Clock to Output Times                                         ;
++-----------+------------+-------+-------+------------+-----------------+
+; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+------------+-------+-------+------------+-----------------+
+; an[*]     ; clk        ; 3.845 ; 3.845 ; Rise       ; clk             ;
+;  an[0]    ; clk        ; 4.039 ; 4.039 ; Rise       ; clk             ;
+;  an[1]    ; clk        ; 3.845 ; 3.845 ; Rise       ; clk             ;
+;  an[2]    ; clk        ; 3.859 ; 3.859 ; Rise       ; clk             ;
+;  an[3]    ; clk        ; 3.864 ; 3.864 ; Rise       ; clk             ;
+; seg[*]    ; clk        ; 4.274 ; 4.274 ; Rise       ; clk             ;
+;  seg[0]   ; clk        ; 4.619 ; 4.619 ; Rise       ; clk             ;
+;  seg[1]   ; clk        ; 4.634 ; 4.634 ; Rise       ; clk             ;
+;  seg[2]   ; clk        ; 4.274 ; 4.274 ; Rise       ; clk             ;
+;  seg[3]   ; clk        ; 4.746 ; 4.746 ; Rise       ; clk             ;
+;  seg[4]   ; clk        ; 4.734 ; 4.734 ; Rise       ; clk             ;
+;  seg[5]   ; clk        ; 4.746 ; 4.746 ; Rise       ; clk             ;
+;  seg[6]   ; clk        ; 4.558 ; 4.558 ; Rise       ; clk             ;
++-----------+------------+-------+-------+------------+-----------------+
+
+
++----------------------------------------------------------+
+; Propagation Delay                                        ;
++------------+-------------+-------+-------+-------+-------+
+; Input Port ; Output Port ; RR    ; RF    ; FR    ; FF    ;
++------------+-------------+-------+-------+-------+-------+
+; sel[3]     ; seg[0]      ; 8.879 ; 8.879 ; 8.879 ; 8.879 ;
+; sel[3]     ; seg[1]      ; 8.601 ; 8.601 ; 8.601 ; 8.601 ;
+; sel[3]     ; seg[2]      ; 9.385 ; 9.385 ; 9.385 ; 9.385 ;
+; sel[3]     ; seg[3]      ; 8.992 ; 8.992 ; 8.992 ; 8.992 ;
+; sel[3]     ; seg[4]      ; 8.719 ; 8.719 ; 8.719 ; 8.719 ;
+; sel[3]     ; seg[5]      ; 9.006 ; 9.006 ; 9.006 ; 9.006 ;
+; sel[3]     ; seg[6]      ; 8.704 ; 8.704 ; 8.704 ; 8.704 ;
++------------+-------------+-------+-------+-------+-------+
+
+
++----------------------------------------------------------+
+; Minimum Propagation Delay                                ;
++------------+-------------+-------+-------+-------+-------+
+; Input Port ; Output Port ; RR    ; RF    ; FR    ; FF    ;
++------------+-------------+-------+-------+-------+-------+
+; sel[3]     ; seg[0]      ; 7.182 ; 6.767 ; 6.767 ; 7.182 ;
+; sel[3]     ; seg[1]      ; 6.782 ; 6.782 ; 6.782 ; 6.782 ;
+; sel[3]     ; seg[2]      ; 7.983 ; 6.446 ; 6.446 ; 7.983 ;
+; sel[3]     ; seg[3]      ; 7.539 ; 6.894 ; 6.894 ; 7.539 ;
+; sel[3]     ; seg[4]      ; 7.424 ; 6.882 ; 6.882 ; 7.424 ;
+; sel[3]     ; seg[5]      ; 7.307 ; 6.894 ; 6.894 ; 7.307 ;
+; sel[3]     ; seg[6]      ; 6.706 ; 7.360 ; 7.360 ; 6.706 ;
++------------+-------------+-------+-------+-------+-------+
+
+
++-------------------------------------------------------------------------------+
+; Multicorner Timing Analysis Summary                                           ;
++------------------+---------+-------+----------+---------+---------------------+
+; Clock            ; Setup   ; Hold  ; Recovery ; Removal ; Minimum Pulse Width ;
++------------------+---------+-------+----------+---------+---------------------+
+; Worst-case Slack ; -2.449  ; 0.215 ; N/A      ; N/A     ; -1.941              ;
+;  clk             ; -2.449  ; 0.215 ; N/A      ; N/A     ; -1.941              ;
+; Design-wide TNS  ; -37.871 ; 0.0   ; 0.0      ; 0.0     ; -44.977             ;
+;  clk             ; -37.871 ; 0.000 ; N/A      ; N/A     ; -44.977             ;
++------------------+---------+-------+----------+---------+---------------------+
+
+
++-----------------------------------------------------------------------+
+; Setup Times                                                           ;
++-----------+------------+-------+-------+------------+-----------------+
+; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+------------+-------+-------+------------+-----------------+
+; rst_n     ; clk        ; 5.700 ; 5.700 ; Rise       ; clk             ;
+; sel[*]    ; clk        ; 6.566 ; 6.566 ; Rise       ; clk             ;
+;  sel[0]   ; clk        ; 5.174 ; 5.174 ; Rise       ; clk             ;
+;  sel[1]   ; clk        ; 5.253 ; 5.253 ; Rise       ; clk             ;
+;  sel[2]   ; clk        ; 5.317 ; 5.317 ; Rise       ; clk             ;
+;  sel[3]   ; clk        ; 6.566 ; 6.566 ; Rise       ; clk             ;
++-----------+------------+-------+-------+------------+-----------------+
+
+
++-------------------------------------------------------------------------+
+; Hold Times                                                              ;
++-----------+------------+--------+--------+------------+-----------------+
+; Data Port ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++-----------+------------+--------+--------+------------+-----------------+
+; rst_n     ; clk        ; -2.454 ; -2.454 ; Rise       ; clk             ;
+; sel[*]    ; clk        ; -2.207 ; -2.207 ; Rise       ; clk             ;
+;  sel[0]   ; clk        ; -2.207 ; -2.207 ; Rise       ; clk             ;
+;  sel[1]   ; clk        ; -2.232 ; -2.232 ; Rise       ; clk             ;
+;  sel[2]   ; clk        ; -2.261 ; -2.261 ; Rise       ; clk             ;
+;  sel[3]   ; clk        ; -2.741 ; -2.741 ; Rise       ; clk             ;
++-----------+------------+--------+--------+------------+-----------------+
+
+
++-------------------------------------------------------------------------+
+; Clock to Output Times                                                   ;
++-----------+------------+--------+--------+------------+-----------------+
+; Data Port ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++-----------+------------+--------+--------+------------+-----------------+
+; an[*]     ; clk        ; 9.127  ; 9.127  ; Rise       ; clk             ;
+;  an[0]    ; clk        ; 9.127  ; 9.127  ; Rise       ; clk             ;
+;  an[1]    ; clk        ; 8.522  ; 8.522  ; Rise       ; clk             ;
+;  an[2]    ; clk        ; 8.422  ; 8.422  ; Rise       ; clk             ;
+;  an[3]    ; clk        ; 8.509  ; 8.509  ; Rise       ; clk             ;
+; seg[*]    ; clk        ; 24.829 ; 24.829 ; Rise       ; clk             ;
+;  seg[0]   ; clk        ; 23.217 ; 23.217 ; Rise       ; clk             ;
+;  seg[1]   ; clk        ; 22.368 ; 22.368 ; Rise       ; clk             ;
+;  seg[2]   ; clk        ; 24.829 ; 24.829 ; Rise       ; clk             ;
+;  seg[3]   ; clk        ; 23.522 ; 23.522 ; Rise       ; clk             ;
+;  seg[4]   ; clk        ; 22.712 ; 22.712 ; Rise       ; clk             ;
+;  seg[5]   ; clk        ; 23.538 ; 23.538 ; Rise       ; clk             ;
+;  seg[6]   ; clk        ; 22.893 ; 22.893 ; Rise       ; clk             ;
++-----------+------------+--------+--------+------------+-----------------+
+
+
++-----------------------------------------------------------------------+
+; Minimum Clock to Output Times                                         ;
++-----------+------------+-------+-------+------------+-----------------+
+; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+------------+-------+-------+------------+-----------------+
+; an[*]     ; clk        ; 3.845 ; 3.845 ; Rise       ; clk             ;
+;  an[0]    ; clk        ; 4.039 ; 4.039 ; Rise       ; clk             ;
+;  an[1]    ; clk        ; 3.845 ; 3.845 ; Rise       ; clk             ;
+;  an[2]    ; clk        ; 3.859 ; 3.859 ; Rise       ; clk             ;
+;  an[3]    ; clk        ; 3.864 ; 3.864 ; Rise       ; clk             ;
+; seg[*]    ; clk        ; 4.274 ; 4.274 ; Rise       ; clk             ;
+;  seg[0]   ; clk        ; 4.619 ; 4.619 ; Rise       ; clk             ;
+;  seg[1]   ; clk        ; 4.634 ; 4.634 ; Rise       ; clk             ;
+;  seg[2]   ; clk        ; 4.274 ; 4.274 ; Rise       ; clk             ;
+;  seg[3]   ; clk        ; 4.746 ; 4.746 ; Rise       ; clk             ;
+;  seg[4]   ; clk        ; 4.734 ; 4.734 ; Rise       ; clk             ;
+;  seg[5]   ; clk        ; 4.746 ; 4.746 ; Rise       ; clk             ;
+;  seg[6]   ; clk        ; 4.558 ; 4.558 ; Rise       ; clk             ;
++-----------+------------+-------+-------+------------+-----------------+
+
+
++--------------------------------------------------------------+
+; Progagation Delay                                            ;
++------------+-------------+--------+--------+--------+--------+
+; Input Port ; Output Port ; RR     ; RF     ; FR     ; FF     ;
++------------+-------------+--------+--------+--------+--------+
+; sel[3]     ; seg[0]      ; 22.643 ; 22.643 ; 22.643 ; 22.643 ;
+; sel[3]     ; seg[1]      ; 21.610 ; 21.610 ; 21.610 ; 21.610 ;
+; sel[3]     ; seg[2]      ; 24.255 ; 24.255 ; 24.255 ; 24.255 ;
+; sel[3]     ; seg[3]      ; 22.948 ; 22.948 ; 22.948 ; 22.948 ;
+; sel[3]     ; seg[4]      ; 21.929 ; 21.929 ; 21.929 ; 21.929 ;
+; sel[3]     ; seg[5]      ; 22.964 ; 22.964 ; 22.964 ; 22.964 ;
+; sel[3]     ; seg[6]      ; 21.964 ; 21.964 ; 21.964 ; 21.964 ;
++------------+-------------+--------+--------+--------+--------+
+
+
++----------------------------------------------------------+
+; Minimum Progagation Delay                                ;
++------------+-------------+-------+-------+-------+-------+
+; Input Port ; Output Port ; RR    ; RF    ; FR    ; FF    ;
++------------+-------------+-------+-------+-------+-------+
+; sel[3]     ; seg[0]      ; 7.182 ; 6.767 ; 6.767 ; 7.182 ;
+; sel[3]     ; seg[1]      ; 6.782 ; 6.782 ; 6.782 ; 6.782 ;
+; sel[3]     ; seg[2]      ; 7.983 ; 6.446 ; 6.446 ; 7.983 ;
+; sel[3]     ; seg[3]      ; 7.539 ; 6.894 ; 6.894 ; 7.539 ;
+; sel[3]     ; seg[4]      ; 7.424 ; 6.882 ; 6.882 ; 7.424 ;
+; sel[3]     ; seg[5]      ; 7.307 ; 6.894 ; 6.894 ; 7.307 ;
+; sel[3]     ; seg[6]      ; 6.706 ; 7.360 ; 7.360 ; 6.706 ;
++------------+-------------+-------+-------+-------+-------+
+
+
++-------------------------------------------------------------------+
+; Setup Transfers                                                   ;
++------------+----------+----------+----------+----------+----------+
+; From Clock ; To Clock ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++------------+----------+----------+----------+----------+----------+
+; clk        ; clk      ; 228      ; 0        ; 0        ; 0        ;
++------------+----------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
++-------------------------------------------------------------------+
+; Hold Transfers                                                    ;
++------------+----------+----------+----------+----------+----------+
+; From Clock ; To Clock ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++------------+----------+----------+----------+----------+----------+
+; clk        ; clk      ; 228      ; 0        ; 0        ; 0        ;
++------------+----------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
+---------------
+; Report TCCS ;
+---------------
+No dedicated SERDES Transmitter circuitry present in device or used in design
+
+
+---------------
+; Report RSKM ;
+---------------
+No dedicated SERDES Receiver circuitry present in device or used in design
+
+
++------------------------------------------------+
+; Unconstrained Paths                            ;
++---------------------------------+-------+------+
+; Property                        ; Setup ; Hold ;
++---------------------------------+-------+------+
+; Illegal Clocks                  ; 0     ; 0    ;
+; Unconstrained Clocks            ; 0     ; 0    ;
+; Unconstrained Input Ports       ; 5     ; 5    ;
+; Unconstrained Input Port Paths  ; 22    ; 22   ;
+; Unconstrained Output Ports      ; 11    ; 11   ;
+; Unconstrained Output Port Paths ; 71    ; 71   ;
++---------------------------------+-------+------+
+
+
++------------------------------------+
+; TimeQuest Timing Analyzer Messages ;
++------------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II 64-Bit TimeQuest Timing Analyzer
+    Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+    Info: Processing started: Tue May 20 01:53:26 2025
+Info: Command: quartus_sta top -c top
+Info: qsta_default_script.tcl version: #1
+Warning (20028): Parallel compilation is not licensed and has been disabled
+Info (21077): Low junction temperature is 0 degrees C
+Info (21077): High junction temperature is 85 degrees C
+Critical Warning (332012): Synopsys Design Constraints File file not found: 'top.sdc'. A Synopsys Design Constraints File is required by the TimeQuest Timing Analyzer to get proper timing constraints. Without it, the Compiler will not properly optimize the design.
+Info (332142): No user constrained base clocks found in the design. Calling "derive_clocks -period 1.0"
+Info (332105): Deriving Clocks
+    Info (332105): create_clock -period 1.000 -name clk clk
+Info: Found TIMEQUEST_REPORT_SCRIPT_INCLUDE_DEFAULT_ANALYSIS = ON
+Info: Analyzing Slow Model
+Critical Warning (332148): Timing requirements not met
+Info (332146): Worst-case setup slack is -2.449
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -2.449       -37.871 clk 
+Info (332146): Worst-case hold slack is 0.499
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):     0.499         0.000 clk 
+Info (332140): No Recovery paths to report
+Info (332140): No Removal paths to report
+Info (332146): Worst-case minimum pulse width slack is -1.941
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -1.941       -44.977 clk 
+Info (332001): The selected device family is not supported by the report_metastability command.
+Info: Analyzing Fast Model
+Critical Warning (332148): Timing requirements not met
+Info (332146): Worst-case setup slack is -0.268
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -0.268        -0.830 clk 
+Info (332146): Worst-case hold slack is 0.215
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):     0.215         0.000 clk 
+Info (332140): No Recovery paths to report
+Info (332140): No Removal paths to report
+Info (332146): Worst-case minimum pulse width slack is -1.380
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -1.380       -30.380 clk 
+Info (332001): The selected device family is not supported by the report_metastability command.
+Info (332102): Design is not fully constrained for setup requirements
+Info (332102): Design is not fully constrained for hold requirements
+Info: Quartus II 64-Bit TimeQuest Timing Analyzer was successful. 0 errors, 4 warnings
+    Info: Peak virtual memory: 4535 megabytes
+    Info: Processing ended: Tue May 20 01:53:27 2025
+    Info: Elapsed time: 00:00:01
+    Info: Total CPU time (on all processors): 00:00:01
+
+
